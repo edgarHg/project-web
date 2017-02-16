@@ -1,0 +1,312 @@
+html{
+    display: flex;
+    justify-content: center;
+    background-color: #f2f2f2;
+}
+body{
+    font-family: Ubuntu-L;
+    font-size: 16px;
+    width: 1280px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+p{
+    color: #000;
+    line-height: 20px;
+}
+
+h2{
+    font-family: Ubuntu-R;
+    font-size: 1.3em;
+    color:#fff;
+}
+h3{
+    padding: 15px 0 5px 0;
+    text-align: left;
+    font-size: 1.1em;
+    font-family: 'Ubuntu-R';
+}
+sub{
+    display: block;
+    font-size: 2em;
+    font-family: 'Ubuntu-R';
+    text-align: left;
+    padding: 5px 5px 5px 0px;
+}
+sup{
+    display: block;
+    font-size: 1em;
+    font-family: 'Ubuntu-M';
+    text-align: left;
+    padding: 0px 5px 5px 5px;
+    color: rgb(255, 46, 52);
+}
+span{
+    font-family: 'Ubuntu-M';
+}
+label{
+    color: #fff;
+}
+header{
+    height: 70px;
+    background: #35393c;
+    width: 100%;
+}
+
+.box{
+    position: relative;
+}
+.nav-menu{
+    height: 100%;
+}
+.separador{
+    padding: 0 10px;
+}
+
+header nav a p{
+    padding: 25px 2px;
+}
+
+header nav a p, .separador{
+    color: #fff;
+    font-size: 1.1em;
+    font-family: Ubuntu-M;
+    transition: all .2s ease-in-out;
+}
+
+header nav a p:hover{
+    color: #EFC34A;
+    animation-name: floating;
+    -webkit-animation-name: floating;
+
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+.slider{
+    height: 400px;
+    width: 100%;
+    background: ghostwhite;
+}
+
+/* | Inicio Banner |*/
+
+.banner{
+    height: 200px;
+    width: 100%;
+    background-color:  #35393c;
+}
+.img_banner img{
+    height: 200px;
+}
+
+.slogan{
+    padding-top: 1.3em;
+}
+.span_banner{
+    font-size: 2.38em;
+    color: #FFF;
+    font-family: Ubuntu-M;
+    line-height: 1.3em;
+}
+.h2_banner{
+    padding-top: 1.3rem;
+}
+/* | Fin Banner |*/
+
+
+.hidrolavadoras{
+    padding: 2em 0 !important;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.quienessomos{
+    background-color:#e6e6e6;
+    width: 100%;
+    padding: 20px 0px 0px 0px;
+}
+.row-quienes-somos{
+    width: 90%;
+    margin: 0 auto;
+}
+.lista-quienes-somos{
+    text-align: left;
+    padding: 10px 0 20px 0;
+    list-style-image: url("../images/check.png");
+    margin-left: 2rem;
+}
+
+.quienessomos-politicas{
+    padding-left: 2.5rem;
+
+}
+
+.lista-quienes-somos li, .parrafo-quienessomos{
+    padding: 5px 0;
+    font-size: 1.1em;
+    text-align: left;
+}
+.servicios{
+    /*height: 430px;*/
+    width: 100%;
+    padding: 2em 0;
+}
+.box-servicios{
+    position: relative;
+    max-width: 288px;
+}
+.box-servicios:hover > .titulo-servicios{
+    z-index: 99;
+    position: relative;
+    opacity: 1;
+}
+
+.resetLeft{
+    margin-left: 0!important;
+}
+.resetRigth{
+    margin-right: -1.3em;
+}
+.servicios sub{
+    text-align: center;
+    padding: 5px 5px 15px 0px;
+}
+.servicios hr{
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.titulo-servicios{
+    background-color: #E6E6E6;
+    padding: 10px 0;
+    opacity: 0;
+    margin-top: -46px;
+    position: relative;
+    border-bottom: 5px solid #35393C;
+}
+.titulo-servicios sup{
+    text-align: center;
+    font-size: 1.2em;
+}
+
+
+/* Inicio hover */
+.caption-style-3{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    justify-content: space-between;
+}
+
+.caption-style-3 li{
+    float: left;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.caption-style-3 li:hover .caption{
+    opacity: 1;
+    transform: translateY(-100px);
+    -webkit-transform:translateY(-100px);
+    -moz-transform:translateY(-100px);
+    -ms-transform:translateY(-100px);
+    -o-transform:translateY(-100px);
+}
+
+.caption-style-3 li:hover img{
+    opacity: 1;
+    transform: translateY(-40px);
+    -webkit-transform:translateY(-40px);
+    -moz-transform:translateY(-40px);
+    -ms-transform:translateY(-40px);
+    -o-transform:translateY(-40px);
+
+}
+
+
+.caption-style-3 img{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    z-index: 4;
+}
+
+
+.caption-style-3 .caption{
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top:270px;
+    -webkit-transition:all 0.15s ease-in-out;
+    -moz-transition:all 0.15s ease-in-out;
+    -o-transition:all 0.15s ease-in-out;
+    -ms-transition:all 0.15s ease-in-out;
+    transition:all 0.15s ease-in-out;
+    width: 100%;
+}
+
+.caption-style-3 img{
+    -webkit-transition:all 0.15s ease-in-out;
+    -moz-transition:all 0.15s ease-in-out;
+    -o-transition:all 0.15s ease-in-out;
+    -ms-transition:all 0.15s ease-in-out;
+    transition:all 0.15s ease-in-out;
+
+}
+.caption-style-3 .blur{
+    /* background-color: rgba(142, 68, 173,0.95);*/
+    background-color: #EFC34A;
+    height: 300px;
+    width: 288px;
+    z-index: 5;
+    position: absolute;
+}
+
+.caption-style-3 .caption-text h2{
+    text-transform: uppercase;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 0px #000;
+}
+.caption-style-3 .caption-text{
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    max-width: 288px;
+    height: 300px;
+    text-align: center;
+    top:20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Hover perron */
+
+footer{
+    background-color: rgb(260,46,52);
+    height: 50px;
+    width: 100%;
+}
+.logo_footer{
+    width: 210px;
+    height: 80%;
+    margin-left: 1em;
+}
+.logo_footer span{
+    color: #fff;
+}
+
+
+/*
+
+*/
