@@ -207,6 +207,7 @@ header nav a p:hover{
     margin: 0px;
     padding: 0px;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .caption-style-3 li{
@@ -328,21 +329,25 @@ and (min-width : 320px) and (max-width : 480px) {
     /* Styles */
 }
 /* iPads (portrait and landscape) ----------- */
+
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-    /* Styles */
+
     .span_banner {
         line-height: 1.1em!important;
-        font-size: 2.2em!important;
+        font-size: 2em!important;
     }
     .slogan {
-        margin-left: 60px;
+        margin-left: 64px;
+        padding-left: 55px;
     }
 
     .grid{
         flex-wrap: wrap !important;
+        justify-content: space-around !important;
     }
     .grid figure {
-        width: 46% !important;;
+        width: 46% !important;
+        margin-bottom: 30px;
     }
     .row-quienes-somos {
         width: 100%;
@@ -378,7 +383,7 @@ and (min-width : 320px) and (max-width : 480px) {
     .caption-style-3 .blur {
         width: 100%;
     }
-    figure.effect-sadie:hover h2 {
+   /* figure.effect-sadie:hover h2 {
         -webkit-transform: translate3d(0,0%,0) translate3d(0,0px,0)!important;
         transform: translate3d(0,0%,0) translate3d(0,-23px,0)!important;
         color: #000!important;
@@ -390,10 +395,48 @@ and (min-width : 320px) and (max-width : 480px) {
         -webkit-transform: translate3d(0,0,0)!important;
         transform: translate3d(0,88px,0)!important;
 
-    }
+    }*/
 }
 
 @media only screen and (min-width : 1024px){
+    .span_banner {
+        font-size: 2.1em !important;
+    }
+    .slogan {
+       margin-left: 4em;
+    }
+    .grid figure {
+        width:31% !important;
+    }
+
+
+    /*Hidrolavadoras*/
+    .grid figure figcaption {
+        padding: 0;
+    }
+    figure.effect-sadie figcaption::before {
+        background: linear-gradient(to bottom, rgba(72, 76, 97, 0) 60%, #EFC34A 0%) !important;
+    }
+
+    figure.effect-sadie p {
+        padding: 0.2em !important;
+        font-size: 0.95rem !important;
+        bottom: 8px !important;
+    }
+
+
+    figure.effect-sadie:hover h2 {
+        -webkit-transform: translate3d(0,-60%,0) translate3d(0,-50px,0);
+        transform: translate3d(0,-60%,0) translate3d(0,-50px,0);
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .row-quienes-somos {
+        width: 100%;
+    }
+    .caption-style-3 li {
+        width:23%;
+    }
 
 }
 /* iPads (landscape) ----------- */
