@@ -133,6 +133,9 @@ header nav a p:hover{
     width: 100%;
     padding: 20px 0px 0px 0px;
 }
+.somos-images{
+ display: block;
+}
 .row-quienes-somos{
     width: 90%;
     margin: 0 auto;
@@ -308,5 +311,145 @@ footer{
 
 
 /*
-
+Medias
 */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 320px) and (max-width : 480px) {
+    /* Styles */
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    /* Styles */
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    /* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    /* Styles */
+    .span_banner {
+        line-height: 1.1em!important;
+        font-size: 2.2em!important;
+    }
+    .slogan {
+        margin-left: 60px;
+    }
+
+    .grid{
+        flex-wrap: wrap !important;
+    }
+    .grid figure {
+        width: 46% !important;;
+    }
+    .row-quienes-somos {
+        width: 100%;
+    }
+    .lista-quienes-somos li, .parrafo-quienessomos {
+        font-size: 1em;
+    }
+    .somos-images{
+        display: none;
+    }
+    .da-slide p {
+        top: 130px !important;
+        width: 50% !important;
+        height: 130px !important;
+    }
+    .caption-style-3 {
+        flex-wrap: wrap;
+    }
+    .caption-style-3 li {
+        width: 46%;
+        margin: 10px auto;
+    }
+    .caption-style-3 img {
+        width: 100%;
+    }
+    .caption-style-3 .caption {
+        top:350px;
+    }
+    .caption-style-3 .caption-text {
+        top:9px;
+        max-width: 100%;
+    }
+    .caption-style-3 .blur {
+        width: 100%;
+    }
+    figure.effect-sadie:hover h2 {
+        -webkit-transform: translate3d(0,0%,0) translate3d(0,0px,0)!important;
+        transform: translate3d(0,0%,0) translate3d(0,-23px,0)!important;
+        color: #000!important;
+        text-shadow: -1px 1px 0px rgba(0, 0, 0, 0) !important;
+    }
+    figure.effect-sadie:hover figcaption::before ,
+    figure.effect-sadie:hover p {
+        opacity: 0 !important;
+        -webkit-transform: translate3d(0,0,0)!important;
+        transform: translate3d(0,88px,0)!important;
+
+    }
+}
+
+@media only screen and (min-width : 1024px){
+
+}
+/* iPads (landscape) ----------- */
+/*
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+
+    .span_banner {
+        line-height: 1.1em;
+        font-size: 2.2em;
+    }
+    .slogan {
+        margin-left: 60px;
+    }
+    .grid figure {
+        width: 30% !important;;
+    }
+    .row-quienes-somos {
+        width: 100%;
+    }
+    .lista-quienes-somos li, .parrafo-quienessomos {
+        font-size: 1em;
+    }
+    .da-slide p {
+        top: 130px !important;
+        width: 50% !important;
+        height: 130px !important;
+    }
+    .caption-style-3 {
+        flex-wrap: nowrap;
+    }
+    .caption-style-3 li {
+        width: 240px;
+    }
+    figure.effect-sadie:hover h2 {
+        color: #fff;
+        -webkit-transform: translate3d(0,-80%,0) translate3d(0,-50px,0);
+        transform: translate3d(0,-80%,0) translate3d(0,-50px,0);
+        background-color: rgba(0,0,0,0);
+    }
+    figure.effect-sadie:hover figcaption::before ,
+    figure.effect-sadie:hover p {
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+*/
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    /* Styles */
+}
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    /* Styles */
+}
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5),  only screen and (min-device-pixel-ratio : 1.5) {
+    /* Styles */
+}
