@@ -120,11 +120,8 @@ header nav a p:hover{
 /* | Fin Banner |*/
 
 
-.hidrolavadoras{
-    padding: 2em 0 !important;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+.mostrarOcultar{
+    display: block;
 }
 
 
@@ -383,19 +380,12 @@ and (min-width : 320px) and (max-width : 480px) {
     .caption-style-3 .blur {
         width: 100%;
     }
-   /* figure.effect-sadie:hover h2 {
-        -webkit-transform: translate3d(0,0%,0) translate3d(0,0px,0)!important;
-        transform: translate3d(0,0%,0) translate3d(0,-23px,0)!important;
-        color: #000!important;
-        text-shadow: -1px 1px 0px rgba(0, 0, 0, 0) !important;
+    .mostrarOcultar{
+        display: none !important;
     }
-    figure.effect-sadie:hover figcaption::before ,
-    figure.effect-sadie:hover p {
-        opacity: 0 !important;
-        -webkit-transform: translate3d(0,0,0)!important;
-        transform: translate3d(0,88px,0)!important;
-
-    }*/
+    .mi-slider ul li {
+        width: 210px !important;
+    }
 }
 
 @media only screen and (min-width : 1024px){
