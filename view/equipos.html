@@ -9,65 +9,34 @@
         <!--<h1 class="slogan_logo">SERVICIO DE HIDROLAVORAS ALTA PRESION</h1>-->
     </div>
 </div>
+    <aside class="servicios">
+        <sub>Equipos</sub>
+        <hr>
+        <br>
+        <select class="select" ng-model="objIteracion.idTipoEquipoSelect" ng-change="objIteracion.cargarArray()">
+            <option ng-repeat="option in  objIteracion.catEquipos" ng-value="option.id" ng-selected="option.id == '100'">{{option.name}}</option>
+        </select>
+    </aside>
 <ul class="gallery">
-   <li>
+   <li ng-repeat="eq in objIteracion.arrFiltrado">
        <article class="box">
            <figure>
-               <img src="http://38.media.tumblr.com/222f39f4520d55100feff7237861b373/tumblr_n8gxs0oWZ21st5lhmo1_1280.jpg">
+               <img ng-src="images/{{eq.img}}">
            </figure>
-           <h3>Chanante ipsum dolor sit amet</h3>
-           <p>Chanante ipsum dolor sit amet, nui, pepino en la mano ut gañán saepe. Nostrud bonico del tó, nisi ut piticli magna bizcoché ex ut ex minim ex zagal adipisicing.</p>
-           <time>12/09/2014</time>
+           <h3>{{eq.name}}</h3>
+           <sup>{{eq.marca + " " + eq.modelo}}</sup>
+           <p ng-if="eq.presion != null"><b>Presión: </b>{{eq.presion}}</p>
+           <p><b>Potencia: </b>{{eq.potencia_de_motor}}</p>
+           <p><b>Motor: </b>{{eq.descMotor}}
+                <label class="text-negro" ng-if="eq.idMotor == 1"><b>&nbsp;&nbsp;&nbsp;<br ng-if="eq.id == 3"> Voltaje: </b>{{eq.voltaje}}</label> 
+                <label class="text-negro" ng-if="eq.idMotor == 2 || eq.idMotor == 3"><b>&nbsp;&nbsp;Consumo: </b>{{eq.consumo}}</label>
+            </p>
+            <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
+           <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
+           <p>
+            {{eq.descripcion}}
+           </p>
+           <time> </time>
        </article>
    </li>
-    <li>
-        <article class="box">
-            <figure>
-                <img src="http://38.media.tumblr.com/222f39f4520d55100feff7237861b373/tumblr_n8gxs0oWZ21st5lhmo1_1280.jpg">
-            </figure>
-            <h3>Chanante ipsum dolor sit amet</h3>
-            <p>Chanante ipsum dolor sit amet, nui, pepino en la mano ut gañán saepe. Nostrud bonico del tó, nisi ut piticli magna bizcoché ex ut ex minim ex zagal adipisicing.</p>
-            <time>12/09/2014</time>
-        </article>
-    </li>
-    <li>
-        <article class="box">
-            <figure>
-                <img src="http://38.media.tumblr.com/222f39f4520d55100feff7237861b373/tumblr_n8gxs0oWZ21st5lhmo1_1280.jpg">
-            </figure>
-            <h3>Chanante ipsum dolor sit amet</h3>
-            <p>Chanante ipsum dolor sit amet, nui, pepino en la mano ut gañán saepe. Nostrud bonico del tó, nisi ut piticli magna bizcoché ex ut ex minim ex zagal adipisicing.</p>
-            <time>12/09/2014</time>
-        </article>
-    </li>
-    <li>
-        <article class="box">
-            <figure>
-                <img src="http://38.media.tumblr.com/222f39f4520d55100feff7237861b373/tumblr_n8gxs0oWZ21st5lhmo1_1280.jpg">
-            </figure>
-            <h3>Chanante ipsum dolor sit amet</h3>
-            <p>Chanante ipsum dolor sit amet, nui, pepino en la mano ut gañán saepe. Nostrud bonico del tó, nisi ut piticli magna bizcoché ex ut ex minim ex zagal adipisicing.</p>
-            <time>12/09/2014</time>
-        </article>
-    </li>
-    <li>
-        <article class="box">
-            <figure>
-                <img src="http://38.media.tumblr.com/222f39f4520d55100feff7237861b373/tumblr_n8gxs0oWZ21st5lhmo1_1280.jpg">
-            </figure>
-            <h3>Chanante ipsum dolor sit amet</h3>
-            <p>Chanante ipsum dolor sit amet, nui, pepino en la mano ut gañán saepe. Nostrud bonico del tó, nisi ut piticli magna bizcoché ex ut ex minim ex zagal adipisicing.</p>
-            <time>12/09/2014</time>
-        </article>
-    </li>
-    <li>
-        <article class="box">
-            <figure>
-                <img src="http://38.media.tumblr.com/222f39f4520d55100feff7237861b373/tumblr_n8gxs0oWZ21st5lhmo1_1280.jpg">
-            </figure>
-            <h3>Chanante ipsum dolor sit amet</h3>
-            <p>Chanante ipsum dolor sit amet, nui, pepino en la mano ut gañán saepe. Nostrud bonico del tó, nisi ut piticli magna bizcoché ex ut ex minim ex zagal adipisicing.</p>
-            <time>12/09/2014</time>
-        </article>
-    </li>
 </ul>
