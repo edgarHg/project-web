@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>SEDIAP</title>
@@ -15,15 +15,13 @@
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/banner.css">
-    <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
-    <script src="js/modernizr.custom.63321.js"></script>
 </head>
 <body>
 <header>
     <nav class="row center-xs middle-xs nav-menu">
-        <a href=""><p>Home</p></a>
+        <a href="/"><p>Home</p></a>
         <div class="separador">/</div>
-        <a href=""><p>Equipo</p></a>
+        <a href="#!/equipos"><p>Equipo</p></a>
         <div class="separador">/</div>
         <a href=""><p>Suministro</p></a>
         <div class="separador">/</div>
@@ -35,175 +33,7 @@
     </nav>
     <h1 style="display: none">Servicios de Hidrolavadoras Alta Presión</h1>
 </header>
-<section>
-    <div id="da-slider" class="da-slider">
-        <div class="" style="       /* background: #ff0000; */
-        display: block;
-        margin: 0 auto;
-        height: 100px;
-        width: 362.5px;
-        margin-top: 5px;">
-            <img src="images/sediap-logo.png" style="height: 100px" class="slideDown" alt="Logo SEDIAP"/>
-            <!--<h1 class="slogan_logo">SERVICIO DE HIDROLAVORAS ALTA PRESION</h1>-->
-        </div>
-        <div class="da-slide">
-            <h2>La solución a tu problema</h2>
-            <p>Contamos con las mejores marcas de hidrolavadoras de alta presión con equipamiento profesional y una
-                gran variedad de equipos de limpieza industriales, ofreciendo un servicio más eficiente y seguro. </p>
-            <div class="da-img"><img src="images/slider/solucion_2.png" alt="image01" style="margin-top: -25px;"/></div>
-        </div>
-        <div class="da-slide">
-            <h2>Limpieza Industrial</h2>
-            <p>En SEDIAP estamos preparados para brindar servicios de limpieza Industrial, con equipos de alta presión y
-                recursos humanos completos que cuenta con la experiencia y capacitación necesaria para adaptarse a las
-                necesidades de cada cliente.</p>
-            <a href="#" class="da-link">Leer más</a>
-            <div class="da-img"><img src="images/slider/hidrolavadoras-industrial.png" style="height: 290px;margin-top: -20px;" alt="image01"/></div>
-        </div>
-        <div class="da-slide">
-            <h2>Arma tu Car-Wash</h2>
-            <p>Tenemos todos los materiales básicos para iniciar este negocio como: Aspiradoras, Pulidoras,
-                Hidrolavadora, Champú, Cera, Aromatizantes, Abrillantadores, Desengrasantes.</p>
-            <a href="#" class="da-link">Leer más</a>
-            <div class="da-img"><img src="images/slider/car-wash_03.png" alt="image01"/></div>
-        </div>
-        <nav class="da-arrows">
-            <span class="da-arrows-prev"></span>
-            <span class="da-arrows-next"></span>
-        </nav>
-    </div>
-
-    <article class="row banner">
-        <figure class="col-xs-3 img_banner">
-            <img src="images/img-banner.png" alt="banner">
-        </figure>
-        <div class="col-xs-8 slogan">
-            <span class="span_banner">Venta, Renta y Servicios de Hidrolavadoras, Generadores, Bombas y Compresores</span>
-            <h2 class="h2_banner">CUALQUIER MARCA TIPO Y POTENCIA</h2>
-        </div>
-    </article>
-    <div id="mi-slider" class="mi-slider">
-        <ul>
-            <li><a href="#"><img src="images/hidrolavadora-industrial.jpg" alt="img01"><h4>Industriales</h4></a></li>
-            <li><a href="#"><img src="images/hidrolavadora-fria.jpg" alt="img02"><h4>Agua Fría</h4></a></li>
-            <li><a href="#"><img src="images/hidrolavadora-agua-caliente.jpg" alt="img03"><h4>Agua Caliente</h4></a></li>
-            <li><a href="#" class="mostrarOcultar"><img src="images/hidrolavadora-electrico.jpg" alt="img04"><h4>Eléctricas</h4></a></li>
-        </ul>
-        <ul>
-            <li><a href="#"><img src="images/motobomba-electrica.jpg" alt="img05"><h4>Eléctricas</h4></a></li>
-            <li><a href="#"><img src="images/motobomba-gasolina.jpg" alt="img06"><h4>Combustión Interna</h4></a></li>
-            <li><a href="#"><img src="images/motobombas-caudal.jpg" alt="img07"><h4>Para Caudal</h4></a></li>
-            <li><a href="#" class="mostrarOcultar"><img src="images/bombas-sumergibles.jpg" alt="img08"><h4>Sumergibles</h4></a></li>
-        </ul>
-        <ul>
-            <li><a href="#"><img src="images/carwash-bombas.jpg" alt="img09"><h4>Bombas</h4></a></li>
-            <li><a href="#"><img src="images/carwash-aspiradora.jpg" alt="img10"><h4>Aspiradoras</h4></a></li>
-            <li><a href="#"><img src="images/car-wash-espumador.jpg" alt="img11"><h4>Espumadores</h4></a></li>
-            <li><a href="#" class="mostrarOcultar"><img src="images/car-wash-insumo.jpg" alt="img11"><h4>Insumos</h4></a></li>
-        </ul>
-        <ul>
-            <li><a href="#"><img src="images/generador-gsalonia.jpg" alt="img12"><h4>Gasolina</h4></a></li>
-            <li><a href="#"><img src="images/generador-diesel.jpg" alt="img13"><h4>Diesel</h4></a></li>
-            <!--<li><a href="#"><img src="images/14.jpg" alt="img14"><h4> </h4></a></li>-->
-            <!--<li><a href="#" class="mostrarOcultar"><img src="images/15.jpg" alt="img15"><h4>Maletines</h4></a></li>-->
-        </ul>
-        <nav>
-            <a href="#">Hidrolavadoras</a>
-            <a href="#">Motobombas</a>
-            <a href="#">Car-Wash</a>
-            <a href="#">Generadores</a>
-        </nav>
-    </div>
-    <aside class="quienessomos">
-        <div class="row row-quienes-somos">
-            <article class="col-xs center-xs middle-xs">
-                <sub>Somos</sub>
-                <sup>La solución a todos tus problemas</sup>
-                <hr>
-                <div class="row">
-                    <div class="col-xs-4 col-end somos-images">
-                        <img src="images/quienes-somos.png">
-                    </div>
-                    <div class="col-xs">
-                        <h3>Crecimiento</h3>
-                        <p class="parrafo-quienessomos">En SEDIAP la especialización y nuestra experiencia nos han
-                            convertido en líderes nacionales del sector, estamos comprometido con el desarrollo y
-                            crecimiento de la industria, con el fin de estar siempre preparados para realizar cualquier
-                            actividad; de una manera profesional y comprometida con el cliente.
-
-                        </p>
-                    </div>
-                </div>
-            </article>
-            <article class="col-xs center-xs middle-xs">
-                <sub>Nuestros Objetivos</sub>
-                <sup>Servicio, Calidad y Desarrollo</sup>
-                <hr>
-                <div class="row">
-                    <div class="col-xs">
-                        <h3>Nuestra Política</h3>
-                        <ul class="lista-quienes-somos">
-                            <li>Servicio personalizado según las necesidades del cliente.</li>
-                            <li>Comunicación y retroalimentación con el cliente.</li>
-                            <li>Cumplimos con los programas y alcances del servicio.</li>
-                            <li>Mejoramos cualquier propuesta de servicio y costo.</li>
-                            <li>Siempre comprometidos al cuidado del medio ambiente.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </aside>
-    <aside class="servicios">
-        <sub>Servicios</sub>
-        <hr>
-        <br>
-        <div class="container-a3">
-            <ul class="caption-style-3 row">
-                <li>
-                    <img src="images/limpieza-industrial.png" alt="">
-                    <div class="caption">
-                        <div class="blur"></div>
-                        <div class="caption-text">
-                            <h2>Limpieza Industrial</h2>
-                            <p>Remolque Autónomo</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="">
-                    <img src="images/servicio-hidrolavadoras.png">
-                    <div class="caption">
-                        <div class="blur"></div>
-                        <div class="caption-text">
-                            <h2>Hidrolavadoras</h2>
-                            <p>Venta, Renta y Servicio</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/servicio-bombas.png">
-                    <div class="caption">
-                        <div class="blur"></div>
-                        <div class="caption-text">
-                            <h2>Bombas</h2>
-                            <p>Cualquier Marca Tipo y Potencia</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="">
-                    <img src="images/servicio-refacciones.png">
-                    <div class="caption">
-                        <div class="blur"></div>
-                        <div class="caption-text">
-                            <h2>Refacciones</h2>
-                            <p>Todo lo que necesites</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <br>
-    </aside>
+<section ng-view>
 </section>
 <footer>
     <div class="row bottom-xs logo_footer">
@@ -211,9 +41,13 @@
         <span>&copy; 2017</span>
     </div>
 </footer>
-    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.cslider.js"></script>
-    <script src="js/jquery.catslider.js"></script>
+    <script type="text/javascript" src="vendor/modernizr.custom.28468.js"></script>
+    <script type="text/javascript" src="vendor/modernizr.custom.63321.js"></script>
+    <script type="text/javascript" src="vendor/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery.cslider.js"></script>
+    <script type="text/javascript" src="vendor/jquery.catslider.js"></script>
+<script type="text/javascript" src="vendor/angular.min.js"></script>
+<script type="text/javascript" src="vendor/angular-route.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
