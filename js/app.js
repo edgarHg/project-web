@@ -40,7 +40,9 @@ angular.module('myApp', ['ngRoute'])
             idTipoAgua es que tipo de agua procesa fria, caliente o ambas
             1 = fria
             2 = caliente
-            3 = caliente y fria 
+            3 = caliente y fria
+
+             Tamaño de Imagen 413 * 331 170 Resolucion
          */
 
             $scope.equipos = [{
@@ -63,7 +65,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"",
                     caldera: null,
-                    img:"f-150.jpg"
+                    img:"hidrolavadoras/f-150.jpg"
                 },
                 {
                     id: 1,
@@ -85,7 +87,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"",
                     caldera: null,
-                    img:"f-250.jpg"
+                    img:"hidrolavadoras/f-250.jpg"
                 },
                 {
                     id: 1,
@@ -107,7 +109,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"",
                     caldera: null,
-                    img:"f-200.jpg"
+                    img:"hidrolavadoras/f-200.jpg"
                 },
                 {
                     id: 1,
@@ -129,7 +131,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"Diesel 5 kg/hr, 25 litros",
                     caldera: null,
-                    img:"tk-200-19.jpg"
+                    img:"hidrolavadoras/tk-200-19.jpg"
 
                 },
                 {
@@ -152,7 +154,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:" Diesel 5 kg/hr, 25 litros",
                     caldera: "A diesel, de doble serpentín",
-                    img:"c-200.jpg"
+                    img:"hidrolavadoras/c-200.jpg"
                 },
                 //Motobombas
                             {
@@ -175,7 +177,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"Diesel 5 kg/hr, 25 litros",
                     caldera: null,
-                    img:"tk-200-19.jpg"
+                    img:"motobomba-electrica.jpg"
 
                 },
                 {
@@ -198,7 +200,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:" Diesel 5 kg/hr, 25 litros",
                     caldera: "A diesel, de doble serpentín",
-                    img:"c-200.jpg"
+                    img:"motobomba-gasolina.jpg"
                 },
                 //Aspiradoras
                             {
@@ -221,7 +223,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"2 de 1,200 watts c/u, 120 ó 220 V.",
                     caldera: null,
-                    img:"base-429.jpg"
+                    img:"carwash-aspiradora.jpg"
 
                 },
                 //Espumadores
@@ -245,7 +247,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:" Diesel 5 kg/hr, 25 litros",
                     caldera: "A diesel, de doble serpentín",
-                    img:"c-200.jpg"
+                    img:"car-wash-espumador.jpg"
                 },
                             //Generadores
                             {
@@ -268,7 +270,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"Diesel 5 kg/hr, 25 litros",
                     caldera: null,
-                    img:"tk-200-19.jpg"
+                    img:"generador-gsalonia.jpg"
 
                 },
                 {
@@ -291,7 +293,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:" Diesel 5 kg/hr, 25 litros",
                     caldera: "A diesel, de doble serpentín",
-                    img:"c-200.jpg"
+                    img:"generador-diesel.jpg"
                 }
                 ];
 
@@ -325,33 +327,27 @@ angular.module('myApp', ['ngRoute'])
                     },
                     Hidrolavadoras : function(){
                         var equiposHidrolavadoras = JSLINQ($scope.equipos).Where(function(item){ return item.id == 1; });
-                        console.info(equiposHidrolavadoras);
                         return equiposHidrolavadoras.items;
 
                     },
                      Motobombas : function(){
                         var equiposHidrolavadoras = JSLINQ($scope.equipos).Where(function(item){ return item.id == 2; });
-                        console.info(equiposHidrolavadoras);
                         return equiposHidrolavadoras.items;
 
                     },
                     Aspiradoras : function(){
                         var equiposHidrolavadoras = JSLINQ($scope.equipos).Where(function(item){ return item.id == 3; });
-                        console.info(equiposHidrolavadoras);
                         return equiposHidrolavadoras.items;
 
                     },
                     Espumadores : function(){
                         var equiposHidrolavadoras = JSLINQ($scope.equipos).Where(function(item){ return item.id == 4; });
-                        console.info(equiposHidrolavadoras);
                         return equiposHidrolavadoras.items;
 
                     },
                     Generadores : function(){
                         var equiposHidrolavadoras = JSLINQ($scope.equipos).Where(function(item){ return item.id == 5; });
-                        console.info(equiposHidrolavadoras);
                         return equiposHidrolavadoras.items;
-
                     },
 
                     Iniciar:function () {

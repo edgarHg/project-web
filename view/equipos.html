@@ -21,7 +21,7 @@
    <li ng-repeat="eq in objIteracion.arrFiltrado">
        <article class="box">
            <figure>
-               <img ng-src="images/{{eq.img}}">
+               <img ng-src="images/equipos/{{eq.img}}">
            </figure>
            <h3>{{eq.name}}</h3>
            <sup>{{eq.marca + " " + eq.modelo}}</sup>
@@ -33,9 +33,9 @@
             </p>
             <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
            <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
-           <p>
-            {{eq.descripcion}}
-           </p>
+           <!--<p>-->
+            <!--{{eq.descripcion}}-->
+           <!--</p>-->
            <time> </time>
        </article>
    </li>
