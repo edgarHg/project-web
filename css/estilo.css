@@ -381,6 +381,46 @@ header nav a p:hover{
 
 .box:hover > .sup-gallery {
   opacity: 1;
+      animation-name: slideUp;
+    -webkit-animation-name: slideUp;
+
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+    visibility: visible !important;
+}
+.btn{
+      border: 1px solid #dedede;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font: bold 12px/12px;
+  padding: 8px 11px;
+  text-decoration: none;
+}
+.btn.red {
+    background: #F67689;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f78297', endColorstr='#f56778');
+    background: -webkit-linear-gradient(top, #F78297, #F56778);
+    background: -moz-linear-gradient(top, #f78297, #f56778);
+    border-color: #DF6F8B #DA5F75 #D55061;
+    color: #913944 !important;
+    text-shadow: 0 1px 0 #F89CA9;
+    box-shadow: 0 1px 1px #C1C1C1, inset 0 1px 0 #F9A1B1;
+}
+
+.btn.red:hover {
+    background: #F67C90;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f56c7e', endColorstr='#f78297');
+    background: -webkit-linear-gradient(top, #F56C7E, #F78297);
+    background: -moz-linear-gradient(top, #f56c7e, #f78297);
+    border-color: #C36079 #C25669 #C14E5C;
+    color: #fff !important;
+    text-shadow: 0 1px 0 #F9A6B4;
+    box-shadow: 0 1px 1px #C3C3C3, inset 0 1px 0 #F8909E;
 }
 /* Hover perron */
 
