@@ -56,13 +56,11 @@ header{
     width: 100%;
 }
 .select{
-        background: rgba(0, 0, 0, 0);
-    /* border: none; */
+    background: rgba(0, 0, 0, 0);
     font-size: 1em;
-    height: 40px;
+    height: 2em;
     padding: 5px;
     width: 250px;
-    margin: 0 auto;
     display: block;
 }
 
@@ -244,14 +242,12 @@ header nav a p:hover{
 
 }
 
-
 .caption-style-3 img{
     margin: 0px;
     padding: 0px;
     float: left;
     z-index: 4;
 }
-
 
 .caption-style-3 .caption{
     cursor: pointer;
@@ -308,6 +304,27 @@ header nav a p:hover{
 
 .text-negro{
     color: #000;
+}
+
+/*Modulo de Equipo */
+.opcionesEquipos{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    padding-bottom: 1em;
+
+}
+.cuadriculas{
+    margin-left: 30px; 
+}
+.cuadriculas a{
+    cursor: pointer;
+}
+
+.ico-views{
+    font-size: 2em;
+    margin-right: 0.4em;
+    color: #35393C;
 }
 /* Gallery de Productos*/
 .gallery {
@@ -428,6 +445,23 @@ header nav a p:hover{
     text-shadow: 0 1px 0 #F9A6B4;
     box-shadow: 0 1px 1px #C3C3C3, inset 0 1px 0 #F8909E;
 }
+.headers{
+    width: 100%;
+    padding: 1em 0;
+}
+.headers sub{
+    text-align: center;
+    padding: 0px 0px 10px 0px;
+}
+.productos-cotizacion{  
+    background-color: #F2F2F2;
+        padding: 1.5em;
+}
+
+
+
+
+
 /* Hover perron */
 
 footer{

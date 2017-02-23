@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngRoute'])
+angular.module('myApp', ['ngRoute','ngDialog','ngService'])
 
     .config(function ($routeProvider) {
         $routeProvider
@@ -19,7 +19,7 @@ angular.module('myApp', ['ngRoute'])
 
     }])
 
-    .controller('EquiposController', ['$scope',function ($scope) {
+    .controller('EquiposController', ['$scope', 'Modal', function ($scope, Modal) {
 
         /*
             id = equivale que tipo de e1uipo es 
@@ -159,48 +159,49 @@ angular.module('myApp', ['ngRoute'])
                 //Motobombas
                             {
                     id: 2,
-                    name:"Motobombas",
-                    descripcion : "Esta hidrolavadora es para uso industrial con bomba de cigüeñal y bielas, para limpieza en industrias, de automóviles, camiones, piezas metálicas, pisos, etc., con paro total y cubierta.",
+                    name:"Motobombas WMP20X",
+                    descripcion : "Motobomba para agua salada y líquidos especiales utilizados en agricultura e industria, gracias a su carcasa de termoplástico reforzado.",
                     idSerie: 1,
                     descSerie: "Industrial",
-                    idMotor: 1,
-                    descMotor:"Electrica",
-                    idTipoAgua: 3,
-                    descTipoAgua: "Agua Caliente y Fría",
-                    marca : "POWERJET",
-                    modelo: "TK-200/19 (Paro total retardado)",
-                    presion:"200 Bares, (2,900 psig)",
-                    potencia_de_motor:"10 hp, 1750 rpm",
-                    peso:"180 Kg",
-                    voltaje:"220 o 440 V",
-                    conexion:"Trifásica",
+                    idMotor: null,
+                    descMotor:null,
+                    idTipoAgua: null,
+                    descTipoAgua: null,
+                    marca : "HONDA",
+                    modelo: "19006001",
+                    presion:null,
+                    potencia_de_motor:null,
+                    peso:null,
+                    voltaje:null,
+                    conexion:null,
                     uso:"Industrial",
-                    consumo:"Diesel 5 kg/hr, 25 litros",
+                    consumo:null,
                     caldera: null,
-                    img:"motobomba-electrica.jpg"
+                    img:"motobombas/wmp-20-x.jpg"
 
                 },
                 {
+
                     id: 2,
-                    name:"Hidrolavadora industrial de alta presión en agua caliente y fría",
+                    name:"Motobomba WB20-XM",
                     descripcion : "Esta hidrolavadora es propia para trabajo de uso rudo, con ayuda del agua caliente es óptima para remover grasa, aceite o mugre muy pegada de maquinaria, camiones, pisos, etc., en donde no cuenten con suministro eléctrico. También se puede producir vapor saturado, para aquellos lugares donde la presión puede dañar la superficie lavada.",
                     idSerie: 1,
                     descSerie: "Industrial",
-                    idMotor: 2,
-                    descMotor:"Gasolina",
-                    idTipoAgua: 3,
-                    descTipoAgua: "Agua Caliente y Fría",
-                    marca : "POWERJET",
-                    modelo: "C-200 G",
-                    presion:"200 Bares, (2,900 psig)",
-                    potencia_de_motor:"18 hp, 1740 rpm",
-                    peso:"170 Kg",
-                    voltaje:"",
-                    conexion:"Trifásica",
+                    idMotor: null,
+                    descMotor:null,
+                    idTipoAgua: null,
+                    descTipoAgua: null,
+                    marca : "HONDA",
+                    modelo: "GX 160H1",
+                    presion:null,
+                    potencia_de_motor:null,
+                    peso:null,
+                    voltaje:null,
+                    conexion:null,
                     uso:"Industrial",
-                    consumo:" Diesel 5 kg/hr, 25 litros",
-                    caldera: "A diesel, de doble serpentín",
-                    img:"motobomba-gasolina.jpg"
+                    consumo:null,
+                    caldera: null,
+                    img:"motobombas/MB20X.jpg"
                 },
                 //Aspiradoras
                             {
@@ -223,13 +224,13 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"2 de 1,200 watts c/u, 120 ó 220 V.",
                     caldera: null,
-                    img:"carwash-aspiradora.jpg"
+                    img:"aspiradoras/base-429.jpg"
 
                 },
                 //Espumadores
                 {
                     id: 4,
-                    name:"Hidrolavadora industrial de alta presión en agua caliente y fría",
+                    name:"Espumador Industrial",
                     descripcion : "Esta hidrolavadora es propia para trabajo de uso rudo, con ayuda del agua caliente es óptima para remover grasa, aceite o mugre muy pegada de maquinaria, camiones, pisos, etc., en donde no cuenten con suministro eléctrico. También se puede producir vapor saturado, para aquellos lugares donde la presión puede dañar la superficie lavada.",
                     idSerie: 1,
                     descSerie: "Industrial",
@@ -247,12 +248,12 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:" Diesel 5 kg/hr, 25 litros",
                     caldera: "A diesel, de doble serpentín",
-                    img:"car-wash-espumador.jpg"
+                    img:"espumadores/espumador-inoxidable-50-litros.jpg"
                 },
-                            //Generadores
-                            {
+                //Generadores
+                {
                     id: 5,
-                    name:"Hidrolavadora industrial de alta presión en agua caliente y fría",
+                    name:"Generador",
                     descripcion : "Esta hidrolavadora es para uso industrial con bomba de cigüeñal y bielas, para limpieza en industrias, de automóviles, camiones, piezas metálicas, pisos, etc., con paro total y cubierta.",
                     idSerie: 1,
                     descSerie: "Industrial",
@@ -270,12 +271,12 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:"Diesel 5 kg/hr, 25 litros",
                     caldera: null,
-                    img:"generador-gsalonia.jpg"
+                    img:"generadores/CALT4500B.jpg"
 
                 },
                 {
                     id: 5,
-                    name:"Hidrolavadora industrial de alta presión en agua caliente y fría",
+                    name:"Generador Industrial",
                     descripcion : "Esta hidrolavadora es propia para trabajo de uso rudo, con ayuda del agua caliente es óptima para remover grasa, aceite o mugre muy pegada de maquinaria, camiones, pisos, etc., en donde no cuenten con suministro eléctrico. También se puede producir vapor saturado, para aquellos lugares donde la presión puede dañar la superficie lavada.",
                     idSerie: 1,
                     descSerie: "Industrial",
@@ -293,7 +294,7 @@ angular.module('myApp', ['ngRoute'])
                     uso:"Industrial",
                     consumo:" Diesel 5 kg/hr, 25 litros",
                     caldera: "A diesel, de doble serpentín",
-                    img:"generador-diesel.jpg"
+                    img:"generadores/generador.jpg"
                 }
                 ];
 
@@ -301,6 +302,7 @@ angular.module('myApp', ['ngRoute'])
                     idTipoEquipoSelect: '100',
                     catEquipos :[{id:100,name:"Todos"},{id:1,name:"Hidrolavadoras"}, {id:2,name:"Motobombas"},{id:3,name:"Aspiradoras"},{id:4,name:"Espumadores"},{id:5,name:"Generadores"}],
                     arrFiltrado: [],
+                    gridList : 'gallery',
                     cargarArray: function(tipo){
                         var idEquipo =$scope.objIteracion.idTipoEquipoSelect;
     
@@ -353,11 +355,38 @@ angular.module('myApp', ['ngRoute'])
                     Iniciar:function () {
                         this.arrFiltrado = this.Todos();
                         this.idTipoEquipoSelect = 100;
+
+                    },
+                    CambiarGridList: function(tipo){
+                        if(tipo == 'lista'){
+                            $scope.objIteracion.gridList = 'lista';
+                        }
+                          if(tipo == 'grid'){
+                            $scope.objIteracion.gridList = 'gallery';
+                        }
+                    },
+                    OpenModalDetalle:function(producto){
+                        console.info(producto);
+                        Modal.notificacion({info:producto,path:'view/modal-detalle-equipo.html' });
+                    },
+                    OpenModalCotizacion:function(producto){
+                        console.info(producto);
+                        Modal.notificacion({info:producto,path:'view/modal-cotizacion-equipo.html' });
+                    },
+                    CerrarModal: function(){
+                        Modal.cerrarModal();
                     }
                 };
                  $scope.objIteracion.Iniciar();
 
     }])
+.controller('ctrlModalCotizacion', ['$scope', 'Modal', function($scope, Modal){
+    $scope.objIteracion ={
+        CerrarModal: function(){
+            Modal.cerrarModal();
+        }
+    };
+}])
 
 
 

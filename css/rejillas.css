@@ -1,0 +1,88 @@
+.inactivo{
+	color: #7B7B7B
+}
+.ico-activo{
+	color:#35393C;
+}
+
+.descripcion-oculto{
+	display: none;
+}
+/* Vista de Lista */
+.lista{
+	display: flex;
+	flex-direction:column;
+	list-style:none;
+	padding-bottom: 20px;
+}
+.lista li {
+    width: 100%;
+    padding: 0.625rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: width 0.3s ease-out;
+    transition: width 0.3s ease-out;
+}
+.lista li .box{
+	position: relative;
+    padding: 6px 6px 6px 6px;
+    background-color: #FFF;
+    overflow: hidden;
+	display: flex;
+	flex-direction:row;
+}
+
+.lista li .box figure img{
+    height: 220px;
+}
+.lista li .box .content-lista{
+	padding-left: 10px;
+}
+
+
+.lista li .box .content-lista .especificaciones-lista{
+    display: flex;
+    flex-direction: row;
+}
+
+.lista li .box .content-lista .especificaciones-lista .especificaciones{
+	width: 40%;
+}
+.lista li .box .content-lista .especificaciones-lista .descripciones{
+width: 60%;
+}
+.lista li .box .content-lista .especificaciones-lista .descripcion-oculto{
+	display: block;
+}
+
+
+.lista li .box .sup-gallery {
+    opacity: 0;
+    padding: 11px;
+    -webkit-transition: bottom .3s ease-in-out;
+    -moz-transition: bottom .3s ease-in-out;
+    -o-transition: bottom .3s ease-in-out;
+    transition: bottom .3s ease-in-out;
+    display: flex;
+    justify-content: flex-start;
+    top: 170px;
+    position: absolute;
+    left: 275px;
+}
+
+.lista li .box:hover > .sup-gallery {
+  opacity: 1;
+    animation-name: slideDown;
+    -webkit-animation-name: slideDown;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+    visibility: visible !important;
+}	
+
+.lista li .box .sup-gallery a.btn.red{
+    border-radius: 0px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
