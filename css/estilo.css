@@ -68,7 +68,8 @@ header{
 
 .box{
     position: relative;
-}
+    transition: all 0.5s ease;
+    }
 .nav-menu{
     height: 100%;
 }
@@ -331,15 +332,14 @@ header nav a p:hover{
     -webkit-transition: width 0.3s ease-out;
     transition: width 0.3s ease-out;
 }
+
 .gallery li .box {
      position: relative;
     padding: 6px 6px 6px 6px;
     background-color: #FFF;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
+
 .gallery li figure {
     display: block;
     width: 100%;
@@ -360,16 +360,16 @@ header nav a p:hover{
 
 .sup-gallery{
     opacity: 0;
-    /* background-color: #EFC34A; */
-    width: 100%;
-    margin-left: -6px;
     padding: 11px;
     -webkit-transition: bottom .3s ease-in-out;
     -moz-transition: bottom .3s ease-in-out;
     -o-transition: bottom .3s ease-in-out;
     transition: bottom .3s ease-in-out;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    top: 255px;
+    position: absolute;
+    left: 270px;
 }
 .sup-gallery a{
     background-color: #E21F1D;
@@ -378,18 +378,17 @@ header nav a p:hover{
     margin: 0 6px 0 6px;
     font-size: 1.2em;
 }
-
+.box:hover{
+  box-shadow: 0px 0px 10px #888;
+}
 .box:hover > .sup-gallery {
   opacity: 1;
-      animation-name: slideUp;
-    -webkit-animation-name: slideUp;
-
+    animation-name: slideDown;
+    -webkit-animation-name: slideDown;
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
-
     animation-timing-function: ease;
     -webkit-animation-timing-function: ease;
-
     visibility: visible !important;
 }
 .btn{
@@ -400,16 +399,23 @@ header nav a p:hover{
   font: bold 12px/12px;
   padding: 8px 11px;
   text-decoration: none;
+  font-family: 'Ubuntu-L';
 }
 .btn.red {
-    background: #F67689;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f78297', endColorstr='#f56778');
-    background: -webkit-linear-gradient(top, #F78297, #F56778);
-    background: -moz-linear-gradient(top, #f78297, #f56778);
-    border-color: #DF6F8B #DA5F75 #D55061;
-    color: #913944 !important;
-    text-shadow: 0 1px 0 #F89CA9;
-    box-shadow: 0 1px 1px #C1C1C1, inset 0 1px 0 #F9A1B1;
+    font-size: 1.5em;
+    color: #FFF;
+    cursor: pointer;
+    padding: 10px;
+    background: -moz-linear-gradient( top, #f598a4 0%, #e64356);
+    background: -webkit-gradient( linear, left top, left bottom, from(#F598A4), to(#E64356));
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border: 1px solid #CA3851;
+    -moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px -1px 0px rgba(255,255,255,0.7);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5), inset 0px -1px 0px rgba(255, 255, 255, 0.7);
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
 }
 
 .btn.red:hover {
