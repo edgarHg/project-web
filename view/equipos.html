@@ -23,20 +23,25 @@
            <figure>
                <img ng-src="images/equipos/{{eq.img}}">
            </figure>
-           <h3>{{eq.name}}</h3>
-           <sup>{{eq.marca + " " + eq.modelo}}</sup>
-           <p ng-if="eq.presion != null"><b>Presión: </b>{{eq.presion}}</p>
-           <p><b>Potencia: </b>{{eq.potencia_de_motor}}</p>
-           <p><b>Motor: </b>{{eq.descMotor}}
-                <label class="text-negro" ng-if="eq.idMotor == 1"><b>&nbsp;&nbsp;&nbsp;<br ng-if="eq.id == 3"> Voltaje: </b>{{eq.voltaje}}</label> 
-                <label class="text-negro" ng-if="eq.idMotor == 2 || eq.idMotor == 3"><b>&nbsp;&nbsp;Consumo: </b>{{eq.consumo}}</label>
-            </p>
-            <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
-           <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
-           <!--<p>-->
-            <!--{{eq.descripcion}}-->
-           <!--</p>-->
-           <time> </time>
+           <div>
+             <h3>{{eq.name}}</h3>
+             <sup>{{eq.marca + " " + eq.modelo}}</sup>
+             <p ng-if="eq.presion != null"><b>Presión: </b>{{eq.presion}}</p>
+             <p><b>Potencia: </b>{{eq.potencia_de_motor}}</p>
+             <p><b>Motor: </b>{{eq.descMotor}}
+                  <label class="text-negro" ng-if="eq.idMotor == 1"><b>&nbsp;&nbsp;&nbsp;<br ng-if="eq.id == 3"> Voltaje: </b>{{eq.voltaje}}</label> 
+                  <label class="text-negro" ng-if="eq.idMotor == 2 || eq.idMotor == 3"><b>&nbsp;&nbsp;Consumo: </b>{{eq.consumo}}</label>
+              </p>
+              <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
+             <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
+             <!--<p>-->
+              <!--{{eq.descripcion}}-->
+             <!--</p>-->
+         </div>
+           <div class="sup-gallery">
+              <a href="">Cotizar</a>
+              <a href="">Detalles</a>
+           </div>
        </article>
    </li>
 </ul>
