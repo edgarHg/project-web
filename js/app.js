@@ -44,6 +44,7 @@ angular.module('myApp', ['ngRoute','ngDialog','ngService'])
 
              Tamaño de Imagen 413 * 331 170 Resolucion
          */
+            $scope.catEquipos = [{id:1, name: "Hidrolavadoras"},{id:2, name: "Motobombas"},{id:3, name: "Aspiradoras"},{id:4, name: "Espumadores"},{id:5, name: "Generadores"},{id:6, name: "Torres de Iluminación"},{id:7, name: "Podadoras"},{id:8, name: "Desbrosadoras"}];
 
             $scope.equipos = [{
                     id: 1,
@@ -380,6 +381,7 @@ angular.module('myApp', ['ngRoute','ngDialog','ngService'])
                  $scope.objIteracion.Iniciar();
 
     }])
+
 .controller('ctrlModalCotizacion', ['$scope', 'Modal', function($scope, Modal){
     $scope.objIteracion ={
         CerrarModal: function(){

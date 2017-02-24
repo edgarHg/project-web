@@ -309,9 +309,10 @@ header nav a p:hover{
 /*Modulo de Equipo */
 .opcionesEquipos{
     display: flex;
-    flex-direction:row;
-    justify-content: center;
-    padding-bottom: 1em;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* padding-bottom: 1em; */
+    padding: 0.625rem;
 
 }
 .cuadriculas{
@@ -326,6 +327,19 @@ header nav a p:hover{
     margin-right: 0.4em;
     color: #35393C;
 }
+
+
+/*************
+
+Modulos de productos o equipos
+
+ *************/
+
+
+ .filtros_productos{
+    border-top: 3px solid #ff0000;
+ }
+
 /* Gallery de Productos*/
 .gallery {
     width: 100%;
@@ -384,9 +398,9 @@ header nav a p:hover{
     transition: bottom .3s ease-in-out;
     display: flex;
     justify-content: flex-start;
-    top: 255px;
+    top: 197px;
     position: absolute;
-    left: 270px;
+    left: 200px;
 }
 .sup-gallery a{
     background-color: #E21F1D;
@@ -457,9 +471,6 @@ header nav a p:hover{
     background-color: #F2F2F2;
         padding: 1.5em;
 }
-
-
-
 
 
 /* Hover perron */
