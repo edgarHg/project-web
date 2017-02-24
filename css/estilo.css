@@ -271,7 +271,6 @@ header nav a p:hover{
 
 }
 .caption-style-3 .blur{
-    /* background-color: rgba(142, 68, 173,0.95);*/
     background-color: #EFC34A;
     height: 300px;
     width: 288px;
@@ -306,15 +305,86 @@ header nav a p:hover{
     color: #000;
 }
 
+.margin-top-20{
+    margin-top: 20px;
+}
+.modules{
+    margin-top: 5px;
+    width: 98%;
+
+}
+
+/*************
+
+Modulos de productos o equipos
+
+ *************/
+
+
+
+
 /*Modulo de Equipo */
+.contenido-header{
+    width: 100%;
+    padding: 0 0 1em 10px;
+}
+.detalles-productos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+
+}
+
 .opcionesEquipos{
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
-    /* padding-bottom: 1em; */
-    padding: 0.625rem;
-
 }
+
+ .filtros_productos{
+  margin-bottom: 20px;
+ }
+
+ .filtros_productos .title-producto{
+    background:#7B7B75;
+    padding: 10px;
+ }
+
+ .filtros_productos ul{
+   list-style: none;
+    padding: 10px 0px;
+    background-color: #FFF;
+}
+
+.filtros_productos ul li{
+     padding: 5px 10px;
+     cursor: pointer;
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+.filtros_productos ul li:hover{
+   background: #7B7B75;
+   color:#fff;
+}
+.filtros_productos ul li:hover > a{
+   color:#fff;
+} 
+
+.filtros_productos ul li a{
+    color: #35393C;
+}
+.checkList_productos{
+    background: #fff;
+    padding-top: 5px;
+}
+
+.checnbox-filtros {
+    margin: 7px 9px;
+}
+.gridProductos{
+     padding-left: 10px;
+}
+   
 .cuadriculas{
     margin-left: 30px; 
 }
@@ -327,18 +397,6 @@ header nav a p:hover{
     margin-right: 0.4em;
     color: #35393C;
 }
-
-
-/*************
-
-Modulos de productos o equipos
-
- *************/
-
-
- .filtros_productos{
-    border-top: 3px solid #ff0000;
- }
 
 /* Gallery de Productos*/
 .gallery {

@@ -1,99 +1,99 @@
 <div id="da-slider" class="da-slider da-slider-secundario">
-  <div class="" style="       /* background: #ff0000; */
+    <div class="" style="       /* background: #ff0000; */
     display: block;
     margin: 0 auto;
     height: 100px;
     width: 362.5px;
     margin-top: 5px;">
-    <img src="images/sediap-logo.png" style="height: 100px" class="slideDown" alt="Logo SEDIAP"/>
-    <!--<h1 class="slogan_logo">SERVICIO DE HIDROLAVORAS ALTA PRESION</h1>-->
-  </div>
+        <img src="images/sediap-logo.png" style="height: 100px" class="slideDown" alt="Logo SEDIAP"/>
+    </div>
 </div>
-<aside class="servicios">
-  <sub>Equipos</sub>
-  <hr>
-</aside>
-<section class="row">
-        <aside class="col-xs-2 gridFiltros">
-          <section class="filtros_productos">
-            <ul>
-              <li>
-                <a href="">Hidrolavadoras</a>
-              </li>
-              <li>
-                <a href="">Motobombas</a>
-              </li>
-              <li>
-                <a href="">Aspiradoras</a>
-              </li>
-              <li>
-                <a href="">Espumadores</a>
-              </li>
-              <li>
-                <a href="">Generador</a>
-              </li>
-               <li>
-                <a href="">Torres de Iluminación</a>
-              </li>
-               <li>
-                <a href="">Podadoras</a>
-              </li>
-              <li>
-                <a href="">Desbrosadoras</a>
-              </li>
-            </ul>
-          </section>
-        </aside>
-        <aside class="col-xs-10 gridProdustos">
-          <section class="opcionesEquipos">
-            <select class="select" ng-model="objIteracion.idTipoEquipoSelect" ng-change="objIteracion.cargarArray()">
-              <option ng-repeat="option in  objIteracion.catEquipos" ng-value="option.id" ng-selected="option.id == '100'">{{option.name}}</option>
-            </select>
-            <div class="cuadriculas">
-              <a ng-click="objIteracion.CambiarGridList('grid')"><span class="icon-grid ico-views inactivo" title="Cuadricula" ng-class="{'ico-activo':objIteracion.gridList == 'gallery'}"></span></a>
-              <a ng-click="objIteracion.CambiarGridList('lista')"><span class="icon-list ico-views inactivo" title="Lista" ng-class="{'ico-activo':objIteracion.gridList == 'lista'}"></span></a>
+<section class="row margin-top-20">
+    <aside class="col-xs-2 gridFiltros">
+        <section class="filtros_productos">
+            <div class="title-producto">
+                <h2>Categorías</h2>
             </div>
-          </section>
-          <ul ng-class="objIteracion.gridList">
-            <li ng-repeat="eq in objIteracion.arrFiltrado" >
-              <article class="box">
-                <figure>
-                  <img ng-src="images/equipos/{{eq.img}}">
-                </figure>
-                <div class="content-lista">
-                  <h3>{{eq.name}}</h3>
-                  <sup>{{eq.marca + " " + eq.modelo}}</sup>
-                  <div class="especificaciones-lista">
-                    <div class="especificaciones">
-                      <p ng-if="eq.presion != null"><b>Presión: </b>{{eq.presion}}</p>
-                      <p><b>Potencia: </b>{{eq.potencia_de_motor}}</p>
-                      <p><b>Motor: </b>{{eq.descMotor}}
-                        <label class="text-negro" ng-if="eq.idMotor == 1"><b>&nbsp;&nbsp;&nbsp;<br ng-if="eq.id == 3"> Voltaje: </b>{{eq.voltaje}}</label>
-                        <label class="text-negro" ng-if="eq.idMotor == 2 || eq.idMotor == 3"><b>&nbsp;&nbsp;Consumo: </b>{{eq.consumo}}</label>
-                      </p>
-                      <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
-                      <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
-                    </div>
-                    <div class="descripciones">
-                      <p ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
-                        {{eq.descripcion}}
-                      </p>
-                    </div>
-                  </div>
+            <ul>
+                <li ng-repeat="cat in objIteracion.catEquipos" ng-click="objIteracion.cargarArray(cat.id)">
+                    {{cat.name}}
+                </li>
+            </ul>
+        </section>
+        <section class="filtros_productos" ng-if="objIteracion.arrFiltrosCategoria.length > 0">
+            <div class="title-producto">
+                <h2>Filtros</h2>
+            </div>
+            <div class="checkList_productos">
+                <div ng-repeat="filt in objIteracion.arrFiltrosCategoria">
+                    <input type="checkbox" class="checnbox-filtros" ng-click="objIteracion.FiltrarEquipos(filt.id)" checklist-model="objIteracion.selected.filtros" checklist-value="filt">
+                    {{filt.name}}
                 </div>
-                <div class="sup-gallery">
-                  <a ng-click="objIteracion.OpenModalCotizacion(eq)" class="btn red" title="Cotizar" ng-class="{'descripcion-oculto':objIteracion.gridList == 'lista'}">
-                    <span class=" icon-clipboard" title="Cotizar"></span>
-                  </a>
-                  <a ng-click="objIteracion.OpenModalDetalle(eq)" class="btn red" title="Detalle" ng-class="{'descripcion-oculto':objIteracion.gridList == 'lista'}">
-                    <span class="icon-cog" title="Detalle"></span>
-                  </a>
-                  <a ng-click="objIteracion.OpenModalCotizacion(eq)" class="btn red" title="Cotizar" ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
-                    <span class=" icon-clipboard">&nbsp;Cotizar</span>
-                  </a>
-                </div>
-              </article>
-            </li>
-          </ul>
+            </div>
+        </section>
+    </aside>
+
+    <aside class="col-xs-10 gridProductos">
+        <aside class="contenido-header">
+            <sub>Equipos</sub>
+            <hr class="modules">
         </aside>
+        <aside class="detalles-productos">
+            <section>
+                Mostrando 1 - 9 de 15 items
+            </section>
+            <section>
+                < Anterior 1 2 Siguiente >
+            </section>
+            <section class="opcionesEquipos">
+                <div class="cuadriculas">
+                    <a ng-click="objIteracion.CambiarGridList('grid')">
+                        <span class="icon-grid ico-views inactivo" title="Cuadricula" ng-class="{'ico-activo':objIteracion.gridList == 'gallery'}"></span></a>
+                    <a ng-click="objIteracion.CambiarGridList('lista')">
+                        <span class="icon-list ico-views inactivo" title="Lista" ng-class="{'ico-activo':objIteracion.gridList == 'lista'}"></span></a>
+                </div>
+            </section>
+        </aside>
+        <ul ng-class="objIteracion.gridList">
+            <li ng-repeat="eq in objIteracion.arrFiltrado">
+                <article class="box">
+                    <figure>
+                        <img ng-src="images/equipos/{{eq.img}}">
+                    </figure>
+                    <div class="content-lista">
+                        <h3>{{eq.name}}</h3>
+                        <sup>{{eq.marca + " " + eq.modelo}}</sup>
+                        <div class="especificaciones-lista">
+                            <div class="especificaciones">
+                                <p ng-if="eq.presion != null"><b>Presión: </b>{{eq.presion}}</p>
+                                <p><b>Potencia: </b>{{eq.potencia_de_motor}}</p>
+                                <p><b>Motor: </b>{{eq.descMotor}}
+                                    <label class="text-negro" ng-if="eq.idMotor == 1"><b>&nbsp;&nbsp;&nbsp;<br> <bng-if="eq.idTipo == 1"> Voltaje: </b>{{eq.voltaje}}</label>
+                                    <label class="text-negro" ng-if="eq.idMotor == 2 || eq.idMotor == 3"><b>&nbsp;&nbsp;Consumo: </b>{{eq.consumo}}</label>
+                                </p>
+                                <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
+                                <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
+                            </div>
+                            <div class="descripciones">
+                                <p ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
+                                    {{eq.descripcion}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sup-gallery">
+                        <a ng-click="objIteracion.OpenModalCotizacion(eq)" class="btn red" title="Cotizar" ng-class="{'descripcion-oculto':objIteracion.gridList == 'lista'}">
+                            <span class=" icon-clipboard" title="Cotizar"></span>
+                        </a>
+                        <a ng-click="objIteracion.OpenModalDetalle(eq)" class="btn red" title="Detalle" ng-class="{'descripcion-oculto':objIteracion.gridList == 'lista'}">
+                            <span class="icon-cog" title="Detalle"></span>
+                        </a>
+                        <a ng-click="objIteracion.OpenModalCotizacion(eq)" class="btn red" title="Cotizar" ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
+                            <span class=" icon-clipboard">&nbsp;Cotizar</span>
+                        </a>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </aside>
 </section>
