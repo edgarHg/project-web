@@ -42,8 +42,10 @@
             <section>
                 Mostrando 1 - 9 de 15 items
             </section>
-            <section>
-                < Anterior 1 2 Siguiente >
+            <section style="margin-left: 10px">
+                <a ng-click="objIteracion.paginacion.paginaAnterior()" style="color:#000"> < Anterior </a>
+                {{(objIteracion.paginacion.paginaActual + 1)}}
+                <a ng-click="objIteracion.paginacion.paginaSiguiente()"  style="color:#000">Siguiente ></a>
             </section>
             <section class="opcionesEquipos">
                 <div class="cuadriculas">
@@ -55,7 +57,10 @@
             </section>
         </aside>
         <ul ng-class="objIteracion.gridList">
-            <li ng-repeat="eq in objIteracion.arrFiltrado">
+
+
+            <!--<li ng-repeat="eq in objIteracion.arrFiltrado">-->
+            <li ng-repeat="eq in objIteracion.paginacion.paginasBusqueda[objIteracion.paginacion.paginaActual]">
                 <article class="box">
                     <figure>
                         <img ng-src="images/equipos/{{eq.img}}">

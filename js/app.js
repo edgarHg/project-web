@@ -301,7 +301,6 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
 
         $scope.objIteracion = {
             catEquipos: cEquipos.tiposEquipos,
-            idTipoEquipoSelect: '100',
             arrFiltrado: [],
             gridList: 'gallery',
             arrFiltrosCategoria: [],
@@ -395,8 +394,20 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 return cEquipos.desbrosadoras;
             },
             Iniciar: function () {
+                var arreglo = [];
+                this.paginacion.paginasBusqueda = [];
                 this.arrFiltrado = this.Todos();
-                this.idTipoEquipoSelect = 100;
+                this.paginacion.instEncontradas = this.arrFiltrado;
+                this.paginacion.numPaginas = Math.round(($scope.objIteracion.paginacion.instEncontradas.length - 1) / 6 - .6) + 1;
+
+                for (var i = 0; i <  $scope.objIteracion.paginacion.instEncontradas.length; i++) {
+                    arreglo.push( $scope.objIteracion.paginacion.instEncontradas[i]);
+                    if ((i + 1) % 6 === 0 || i ===  $scope.objIteracion.paginacion.instEncontradas.length - 1) {
+                        $scope.objIteracion.paginacion.paginasBusqueda.push(arreglo);
+                        arreglo = [];
+                    }
+                }
+                console.log($scope.objIteracion.paginacion.paginasBusqueda);
             },
             CambiarGridList: function (tipo) {
                 if (tipo == 'lista') {
@@ -454,6 +465,30 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                         });
                     this.arrFiltrado = arrFiltrosEquipos;
                     }
+                }
+
+            },
+            paginacion: {
+                paginasBusqueda: null,
+                paginaActual: 0,
+                numPaginas: null,
+                paginaSiguiente: function () {
+                    if ($scope.objIteracion.paginacion.paginaActual + 1 < $scope.objIteracion.paginacion.numPaginas)
+                        $scope.objIteracion.paginacion.paginaActual++;
+                },
+                paginaAnterior: function () {
+                    if ($scope.objIteracion.paginacion.paginaActual > 0)
+                        $scope.objIteracion.paginacion.paginaActual--;
+                },
+                SeriePaginacion: function (min, max, step) {
+                    step = step || 1;
+                    var arr = [];
+                    for (var i = min; i <= max; i += step)
+                        arr.push(i);
+                    return arr;
+                },
+                paginaSeleccionada: function (numberPagina) {
+                    $scope.objIteracion.paginacion.paginaActual = numberPagina - 1;
                 }
 
             }
