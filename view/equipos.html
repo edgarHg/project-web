@@ -49,7 +49,7 @@
         </aside>
 
         <aside class="detalles-productos">
-            <section>
+            <section class="paginado_vacio">
                 <div>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</div>
             </section>
             <section class="paginado">
@@ -87,33 +87,36 @@
                             <span class="icon-cog" title="Detalle"></span>
                         </a>
                     </div>
-                    <div class="content-lista">
-                        <h3>{{eq.name}}</h3>
-                        <sup>{{eq.marca + " " + eq.modelo}}</sup>
-                        <div class="especificaciones-lista">
-                            <div class="especificaciones">
-                                <p ng-if="eq.presion != null"><b>Presión: </b>{{eq.presion}}</p>
-                                <p><b>Potencia: </b>{{eq.potencia_de_motor}}</p>
-                                <p><b>Motor: </b>{{eq.descMotor}}
-                                    <label class="text-negro" ng-if="eq.idMotor == 1">&nbsp;&nbsp;&nbsp;<br> <b ng-if="eq.idTipo == 1"> Voltaje: </b>{{eq.voltaje}}</label>
-                                    <label class="text-negro" ng-if="eq.idMotor == 2 || eq.idMotor == 3"><b>&nbsp;&nbsp;Consumo: </b>{{eq.consumo}}</label>
-                                </p>
-                                <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
-                                <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
+                    <div class="grid-textos">
+                            <div class="content-lista">
+                                <h3>{{eq.name}}</h3>
+                                <sup>{{eq.marca + " " + eq.modelo}}</sup>
+                                <div class="especificaciones-lista">
+                                    <div class="especificaciones">
+                                        <p ng-if="eq.presion != null"><b>Presión: </b>{{eq.presion}}</p>
+                                        <p><b>Potencia: </b>{{eq.potencia_de_motor}}</p>
+                                        <p><b>Motor: </b>{{eq.descMotor}}
+                                            <label class="text-negro" ng-if="eq.idMotor == 1">&nbsp;&nbsp;&nbsp;<br> <b ng-if="eq.idTipo == 1"> Voltaje: </b>{{eq.voltaje}}</label>
+                                            <label class="text-negro" ng-if="eq.idMotor == 2 || eq.idMotor == 3"><b>Consumo: </b>{{eq.consumo}}</label>
+                                        </p>
+                                        <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
+                                        <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
+                                    </div>
+                                    <div class="descripciones">
+                                        <p ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
+                                            {{eq.descripcion}}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="descripciones">
-                                <p ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
-                                    {{eq.descripcion}}
-                                </p>
+                            <div class="sup-gallery">
+                                <a ng-click="objIteracion.OpenModalCotizacion(eq)" class="btn red" title="Cotizar" ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
+                                    <span class=" icon-clipboard">&nbsp;</span>Cotizar
+                                </a>
                             </div>
-                        </div>
                     </div>
                 </article>
-                <div class="sup-gallery">
-                    <a ng-click="objIteracion.OpenModalCotizacion(eq)" class="btn red" title="Cotizar" ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
-                        <span class=" icon-clipboard">&nbsp;</span>Cotizar
-                    </a>
-                </div>
+
             </li>
         </ul>
     </aside>

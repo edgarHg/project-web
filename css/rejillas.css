@@ -32,31 +32,39 @@
 	flex-direction:row;
 }
 
+.lista li .box figure{
+    max-width: 275px;
+    width: 100%;
+      margin-bottom: 6px;
+          display: block;
+}
 .lista li .box figure img{
     height: 220px;
 }
-.lista li .box .content-lista{
-	padding-left: 10px;
+.lista li .box .grid-textos .content-lista{
+padding-left: 10px;
 }
 
 
-.lista li .box .content-lista .especificaciones-lista{
+.lista li .box .grid-textos .content-lista .especificaciones-lista{
     display: flex;
     flex-direction: row;
 }
 
-.lista li .box .content-lista .especificaciones-lista .especificaciones{
+.lista li .box .grid-textos .content-lista .especificaciones-lista .especificaciones{
 	width: 40%;
+
 }
-.lista li .box .content-lista .especificaciones-lista .descripciones{
-width: 60%;
+.lista li .box .grid-textos .content-lista .especificaciones-lista .descripciones{
+    width: 60%;
+    height: 120px;
 }
-.lista li .box .content-lista .especificaciones-lista .descripcion-oculto{
+.lista li .box .grid-textos .content-lista .especificaciones-lista .descripcion-oculto{
 	display: block;
 }
 
 
-.lista li .sup-gallery {
+.lista li .box .grid-textos .sup-gallery {
     opacity: 0;
     -webkit-transition: bottom .3s ease-in-out;
     -moz-transition: bottom .3s ease-in-out;
@@ -65,11 +73,10 @@ width: 60%;
     display: flex;
     justify-content: flex-start;
     position: absolute;
-    left: 475px;
-    margin-top: -47px;
+    margin-top: 2px;
 }
 
-.lista li:hover > .sup-gallery {
+.lista li:hover > .box .grid-textos .sup-gallery {
   opacity: 1;
     animation-name: slideDown;
     -webkit-animation-name: slideDown;
@@ -80,13 +87,50 @@ width: 60%;
     visibility: visible !important;
 }	
 
-.lista li .sup-gallery a.btn.red{
+.lista li .grid-textos .sup-gallery a.btn.red{
     border-radius: 0px;
     padding: 10px 20px;
     font-size: 1em;
 }
 
-
+@media only screen and (min-width : 481px) and (max-width : 767px) {
+    .gridFiltros{
+        display: none;
+    }
+    .gridProductos{
+        max-width: 100% !important;
+        flex-basis: 100%;
+    }
+    .contenido-header div.filtros-select{
+        display: flex;
+        margin-left: 20px;
+    }
+    .opcionesEquipos{
+        display: none;
+    }
+    .paginado_vacio{
+        display: none;
+    }
+    .detalles-productos {
+        justify-content: center;
+    }
+        .lista li .box .content-lista .especificaciones-lista {
+        flex-direction: column;
+    }
+    .lista li .box .content-lista .especificaciones-lista .especificaciones,
+    .lista li .box .content-lista .especificaciones-lista .descripciones {
+        width: 100% !important;
+    }
+    .lista li .box .content-lista .especificaciones-lista .descripciones {
+        display: none;
+    }
+    .lista li .box .content-lista .especificaciones-lista .descripciones p{
+        font-size: 0.9em;
+    }
+        .lista li .box .grid-textos .sup-gallery {
+        margin-top: 22px;
+    }
+}
 
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
     .lista li .box .content-lista .especificaciones-lista {
@@ -94,7 +138,7 @@ width: 60%;
     }
     .lista li .box .content-lista .especificaciones-lista .especificaciones,
     .lista li .box .content-lista .especificaciones-lista .descripciones {
-        width: 100%;
+        width: 100% !important;
     }
     .lista li .box .content-lista .especificaciones-lista .descripciones {
         display: none;
@@ -103,12 +147,17 @@ width: 60%;
         font-size: 0.9em;
     }
 
-.lista li .sup-gallery {
-    left: 305px;
-    margin-top: -46px;
-}
+    .lista li .box .grid-textos .sup-gallery {
+        left: 285px;
+     margin-top: 25px;
+    }
 }
 
+@media only screen and (min-width : 1024px){
+    .lista li .box .grid-textos .sup-gallery {
+        margin-top: 2px;
+    }
+}
 
 
 

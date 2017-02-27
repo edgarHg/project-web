@@ -339,7 +339,9 @@ header nav a p:hover{
     padding: 3px;
     border: 1px solid #7B7B7B;
 }
-
+.paginado_vacio{
+    display: block;
+}
 
 
 
@@ -351,7 +353,7 @@ header nav a p:hover{
 
 /*Modulo de Equipo */
 .contenido-header{
-    width: 100%;
+    /*width: 100%;*/
     padding: 0 0 1em 10px;
     display: flex;
     flex-direction: column;
@@ -460,25 +462,28 @@ header nav a p:hover{
      position: relative;
     padding: 6px 6px 6px 6px;
     background-color: #FFF;
-    overflow: hidden;
 }
 
-.gallery li figure {
+.gallery li .box figure {
     display: block;
     width: 100%;
     margin-bottom: 6px;
 }
-.gallery li img {
+.gallery li .box figure img {
     width: 100%;
     height: auto;
 }
-.gallery li h3 {
+.gallery li .box h3 {
     margin-bottom: 6px;
     font-size: 17px;
     font-weight: bold;
     line-height: 20px;
     text-transform: uppercase;
     color: #000;
+}
+
+.gallery li .box .grid-textos{
+        display: inline-flex;
 }
 
 .sup-gallery{
@@ -563,6 +568,10 @@ header nav a p:hover{
         padding: 1.5em;
 }
 
+h2.zero,p.zero {
+    margin:0;
+    padding:0
+}
 
 /* Hover perron */
 
@@ -584,21 +593,81 @@ footer{
 /*
 Medias
 */
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-    /* Styles */
-}
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-    /* Styles */
-}
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
-    /* Styles */
+     .gridFiltros{
+        display: none;
+    }
+    .gridProductos{
+        max-width: 100% !important;
+        flex-basis: 100%;
+    }
+    .contenido-header div.filtros-select{
+        display: flex;
+        margin-left: 20px;
+    }
+    .opcionesEquipos{
+        display: none;
+    }
+    .paginado_vacio{
+        display: none;
+    }
+    .detalles-productos {
+        justify-content: center;
+    }
 }
-/* iPads (portrait and landscape) ----------- */
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 321px) and (max-width : 480px) {
+    .gridFiltros{
+        display: none;
+    }
+    .gridProductos{
+        max-width: 100% !important;
+        flex-basis: 100%;
+    }
+    .contenido-header div.filtros-select{
+        display: flex;
+        margin-left: 20px;
+    }
+    .paginado_vacio{
+        display: none;
+    }
+      .opcionesEquipos{
+        display: none;
+    }
+    .paginado_vacio{
+        display: none;
+    }
+    .detalles-productos {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width : 481px) and (max-width : 767px) {
+    .gridFiltros{
+        display: none;
+    }
+    .gridProductos{
+        max-width: 100% !important;
+        flex-basis: 100%;
+    }
+    .contenido-header div.filtros-select{
+        display: flex;
+        margin-left: 20px;
+    }
+    .opcionesEquipos{
+        display: none;
+    }
+    .paginado_vacio{
+        display: none;
+    }
+    .detalles-productos {
+        justify-content: center;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
 
     .span_banner {
@@ -670,54 +739,6 @@ Medias
         margin-left: 20px;
     }
 }
-.demo-2 {
-    position:relative;
-    width:300px;
-    height:200px;
-    overflow:hidden;
-    float:left;
-    margin-right:20px;
-    background-color:rgba(26,76,110,0.5)
-}
-.demo-2 p,.demo-2 h2 {
-    color:#fff;
-    padding:10px;
-    left:-20px;
-    top:20px;
-    position:relative
-}
-.demo-2 p {
-    font-family:'Lato';
-    font-size:12px;
-    line-height:18px;
-    margin:0
-}
-.demo-2 h2 {
-    font-size:20px;
-    line-height:24px;
-    margin:0;
-    font-family:'Lato'
-}
-.effect img {
-    position:absolute;
-    left:0;
-    bottom:0;
-    cursor:pointer;
-    margin:-12px 0;
-    -webkit-transition:bottom .3s ease-in-out;
-    -moz-transition:bottom .3s ease-in-out;
-    -o-transition:bottom .3s ease-in-out;
-    transition:bottom .3s ease-in-out
-}
-.effect img.top:hover {
-    bottom:-96px;
-    padding-top:100px
-}
-h2.zero,p.zero {
-    margin:0;
-    padding:0
-}
-
 
 @media only screen and (min-width : 1024px){
     .span_banner {
@@ -729,29 +750,6 @@ h2.zero,p.zero {
     .grid figure {
         width:31% !important;
     }
-
-
-    /*Hidrolavadoras*/
-    .grid figure figcaption {
-        padding: 0;
-    }
-    figure.effect-sadie figcaption::before {
-        background: linear-gradient(to bottom, rgba(72, 76, 97, 0) 60%, #EFC34A 0%) !important;
-    }
-
-    figure.effect-sadie p {
-        padding: 0.2em !important;
-        font-size: 0.95rem !important;
-        bottom: 8px !important;
-    }
-
-
-    figure.effect-sadie:hover h2 {
-        -webkit-transform: translate3d(0,-60%,0) translate3d(0,-50px,0);
-        transform: translate3d(0,-60%,0) translate3d(0,-50px,0);
-        background-color: rgba(0, 0, 0, 0);
-    }
-
     .row-quienes-somos {
         width: 100%;
     }
@@ -762,50 +760,7 @@ h2.zero,p.zero {
         display: none;
     }
 }
-/* iPads (landscape) ----------- */
-/*
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
 
-    .span_banner {
-        line-height: 1.1em;
-        font-size: 2.2em;
-    }
-    .slogan {
-        margin-left: 60px;
-    }
-    .grid figure {
-        width: 30% !important;;
-    }
-    .row-quienes-somos {
-        width: 100%;
-    }
-    .lista-quienes-somos li, .parrafo-quienessomos {
-        font-size: 1em;
-    }
-    .da-slide p {
-        top: 130px !important;
-        width: 50% !important;
-        height: 130px !important;
-    }
-    .caption-style-3 {
-        flex-wrap: nowrap;
-    }
-    .caption-style-3 li {
-        width: 240px;
-    }
-    figure.effect-sadie:hover h2 {
-        color: #fff;
-        -webkit-transform: translate3d(0,-80%,0) translate3d(0,-50px,0);
-        transform: translate3d(0,-80%,0) translate3d(0,-50px,0);
-        background-color: rgba(0,0,0,0);
-    }
-    figure.effect-sadie:hover figcaption::before ,
-    figure.effect-sadie:hover p {
-        opacity: 1;
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-    }
-}
 */
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
