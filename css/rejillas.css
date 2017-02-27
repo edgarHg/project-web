@@ -65,7 +65,7 @@ width: 60%;
     display: flex;
     justify-content: flex-start;
     position: absolute;
-    left: 516px;
+    left: 475px;
     margin-top: -47px;
 }
 
@@ -85,3 +85,31 @@ width: 60%;
     padding: 10px 20px;
     font-size: 1em;
 }
+
+
+
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    .lista li .box .content-lista .especificaciones-lista {
+        flex-direction: column;
+    }
+    .lista li .box .content-lista .especificaciones-lista .especificaciones,
+    .lista li .box .content-lista .especificaciones-lista .descripciones {
+        width: 100%;
+    }
+    .lista li .box .content-lista .especificaciones-lista .descripciones {
+        display: none;
+    }
+    .lista li .box .content-lista .especificaciones-lista .descripciones p{
+        font-size: 0.9em;
+    }
+
+.lista li .sup-gallery {
+    left: 305px;
+    margin-top: -46px;
+}
+}
+
+
+
+
+
