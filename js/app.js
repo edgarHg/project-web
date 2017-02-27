@@ -4,7 +4,6 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
         $routeProvider
             .when('/', {
                 templateUrl: 'view/home.html',
-                controller: 'MainController'
             })
             .when('/equipos/:tipo?/:filtro?/:descripcion?', {
                 templateUrl: 'view/equipos.html',
@@ -15,8 +14,31 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             });
 
     })
-    .controller('MainController', [function () {
-
+    .controller('ctrlMenu', ['$scope',function ($scope) {
+        $scope.objMenu = {
+            menuSeleccionado: 'home',
+            ItemSeleccionado : function(idMenu){
+                console.log(idMenu);
+                if(idMenu == 'home'){
+                    $scope.objMenu.menuSeleccionado = 'home';
+                }
+                if(idMenu == 'equipos'){
+                    $scope.objMenu.menuSeleccionado = 'equipos';
+                }
+                if(idMenu == 'suministro'){
+                    $scope.objMenu.menuSeleccionado = 'suministro';
+                }
+                if(idMenu == 'refacciones'){
+                    $scope.objMenu.menuSeleccionado = 'refacciones';
+                }
+                if(idMenu == 'quienes&somos'){
+                    $scope.objMenu.menuSeleccionado = 'quienes&somos';
+                }
+                if(idMenu == 'contacto'){
+                    $scope.objMenu.menuSeleccionado = 'contacto';
+                }
+            }
+        };
     }])
 
     .controller('EquiposController', ['$scope', 'Modal', 'cEquipos', '$routeParams',function ($scope, Modal, cEquipos,$routeParams) {

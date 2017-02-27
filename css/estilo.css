@@ -419,6 +419,8 @@ header nav a p:hover{
 }
 .gridProductos{
      padding-left: 10px;
+    max-height: 1780px;
+    min-height: 1066px;
 }
    
 .cuadriculas{
@@ -571,6 +573,9 @@ header nav a p:hover{
 .categoriaSeleccionada{
     background: #7B7B75;
     color: #FFF;
+}
+.itemMenuSeleccionado{
+    color: #EFC34A;
 }
 
 h2.zero,p.zero {

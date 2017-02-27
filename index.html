@@ -22,18 +22,18 @@
 </head>
 <body>
 <header>
-    <nav class="row center-xs middle-xs nav-menu">
-        <a href="/"><p>Home</p></a>
+    <nav class="row center-xs middle-xs nav-menu" ng-controller="ctrlMenu">
+        <a href="/" ng-click="objMenu.ItemSeleccionado('home')"><p ng-class="{itemMenuSeleccionado: 'home' == objMenu.menuSeleccionado}">Home</p></a>
         <div class="separador">/</div>
-        <a href="#!/equipos"><p>Equipos</p></a>
+        <a href="#!/equipos" ng-click="objMenu.ItemSeleccionado('equipos')"><p ng-class="{itemMenuSeleccionado: 'equipos' == objMenu.menuSeleccionado}">Equipos</p></a>
         <div class="separador">/</div>
-        <a href=""><p>Suministro</p></a>
+        <a href="" ng-click="objMenu.ItemSeleccionado('suministro')"><p ng-class="{itemMenuSeleccionado: 'suministro' == objMenu.menuSeleccionado}">Suministro</p></a>
         <div class="separador">/</div>
-        <a href=""><p>Refacciones</p></a>
+        <a href="" ng-click="objMenu.ItemSeleccionado('refacciones')"><p ng-class="{itemMenuSeleccionado: 'refacciones' == objMenu.menuSeleccionado}">Refacciones</p></a>
         <div class="separador">/</div>
-        <a href=""><p>Quienes Somos</p></a>
+        <a href="" ng-click="objMenu.ItemSeleccionado('quienes&somos')"><p ng-class="{itemMenuSeleccionado: 'quienes&somos' == objMenu.menuSeleccionado}">Quienes Somos</p></a>
         <div class="separador">/</div>
-        <a href=""><p>Contacto</p></a>
+        <a href="" ng-click="objMenu.ItemSeleccionado('contacto')"><p ng-class="{itemMenuSeleccionado: 'contacto' == objMenu.menuSeleccionado}">Contacto</p></a>
     </nav>
     <h1 style="display: none">Servicios de Hidrolavadoras Alta Presión</h1>
 </header>
