@@ -47,12 +47,15 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
         $scope.catEquipos = cEquipos.tiposEquipos;
 
         $scope.objIteracion = {
+            idCatEquipos: 100,
+            idFiltroEquipo :1,
             catEquipos: cEquipos.tiposEquipos,
             arrFiltrado: [],
             gridList: 'gallery',
             arrFiltrosCategoria: [],
             selected: {filtros: []},
             cargarArray: function (tipo) {
+                console.log(tipo);
                 var idEquipo = tipo;
                 this.paginacion.paginaActual = 0;
                 if (idEquipo == 100) {
@@ -171,7 +174,8 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 this.arrFiltrado= [];
                 if(tipo == 1){
                     if(arrSeleccionados.length == 0){
-                    this.arrFiltrado = this.Hidrolavadoras();
+                        this.arrFiltrado = this.Hidrolavadoras();
+                        this.paginacion.ConstruirPaginado(this.arrFiltrado);
                     }else{
                         var arrFiltrosEquipos= [];
                         arrSeleccionados.forEach(function (filtro) {
@@ -242,6 +246,9 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             }
         };
         $scope.objIteracion.Iniciar();
+        $scope.hola = function () {
+            console.log("ss");
+        }
     }])
 
     .controller('ctrlModalCotizacion', ['$scope', 'Modal', function ($scope, Modal) {

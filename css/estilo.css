@@ -60,8 +60,11 @@ header{
     font-size: 1em;
     height: 2em;
     padding: 5px;
-    width: 250px;
     display: block;
+    margin-right: 20px;
+}
+.width-190{
+    width: 190px;
 }
 
 .box{
@@ -314,26 +317,57 @@ header nav a p:hover{
 
 }
 
-/*************
+/* * * * * * * * * * * * * * * * * * * * *
+*       Paginacion                       *
+* * * * * * * * * * * * * * * * * * * *  */
+.paginado{
+    margin-left: 10px;
+    margin-top: 8px;
+}
+.paginado a{
+    color:#000;
+    padding: 3px;
+    border: 1px solid #7B7B7B;
+    margin: 0 5px;
+}
+.paginado a span{
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.paginado label{
+    color: #000;
+    padding: 3px;
+    border: 1px solid #7B7B7B;
+}
 
-Modulos de productos o equipos
-
- *************/
 
 
 
+/* * * * * * * * * * * * *
+
+        Modulos de productos o equipos
+
+ * * * * * * * * * * * * */
 
 /*Modulo de Equipo */
 .contenido-header{
     width: 100%;
     padding: 0 0 1em 10px;
+    display: flex;
+    flex-direction: column;
+}
+.contenido-header div{
+    display: flex;
+    align-items: center;
+}
+.contenido-header div.filtros-select{
+    display: none;
 }
 .detalles-productos{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-left: 10px;
-
 }
 
 .opcionesEquipos{
@@ -449,16 +483,14 @@ Modulos de productos o equipos
 
 .sup-gallery{
     opacity: 0;
-    padding: 11px;
     -webkit-transition: bottom .3s ease-in-out;
     -moz-transition: bottom .3s ease-in-out;
     -o-transition: bottom .3s ease-in-out;
     transition: bottom .3s ease-in-out;
     display: flex;
-    justify-content: flex-start;
-    top: 197px;
-    position: absolute;
-    left: 200px;
+    justify-content: flex-end;
+    z-index: 100;
+    margin-top: -60px;
 }
 .sup-gallery a{
     background-color: #E21F1D;
@@ -479,6 +511,7 @@ Modulos de productos o equipos
     animation-timing-function: ease;
     -webkit-animation-timing-function: ease;
     visibility: visible !important;
+    height: auto;
 }
 .btn{
       border: 1px solid #dedede;
@@ -625,6 +658,17 @@ Medias
     .mi-slider ul li {
         width: 210px !important;
     }
+    .gridFiltros{
+        display: none;
+    }
+    .gridProductos{
+        max-width: 100% !important;
+        flex-basis: 100%;
+    }
+    .contenido-header div.filtros-select{
+        display: flex;
+        margin-left: 20px;
+    }
 }
 .demo-2 {
     position:relative;
@@ -714,7 +758,9 @@ h2.zero,p.zero {
     .caption-style-3 li {
         width:23%;
     }
-
+    .filtros-select{
+        display: none;
+    }
 }
 /* iPads (landscape) ----------- */
 /*

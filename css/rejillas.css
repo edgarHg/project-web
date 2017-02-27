@@ -56,21 +56,20 @@ width: 60%;
 }
 
 
-.lista li .box .sup-gallery {
+.lista li .sup-gallery {
     opacity: 0;
-    padding: 11px;
     -webkit-transition: bottom .3s ease-in-out;
     -moz-transition: bottom .3s ease-in-out;
     -o-transition: bottom .3s ease-in-out;
     transition: bottom .3s ease-in-out;
     display: flex;
     justify-content: flex-start;
-    top: 170px;
     position: absolute;
-    left: 275px;
+    left: 516px;
+    margin-top: -47px;
 }
 
-.lista li .box:hover > .sup-gallery {
+.lista li:hover > .sup-gallery {
   opacity: 1;
     animation-name: slideDown;
     -webkit-animation-name: slideDown;
@@ -81,7 +80,7 @@ width: 60%;
     visibility: visible !important;
 }	
 
-.lista li .box .sup-gallery a.btn.red{
+.lista li .sup-gallery a.btn.red{
     border-radius: 0px;
     padding: 10px 20px;
     font-size: 1em;
