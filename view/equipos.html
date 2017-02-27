@@ -15,7 +15,7 @@
                 <h2>Categorías</h2>
             </div>
             <ul>
-                <li ng-repeat="cat in objIteracion.catEquipos" ng-click="objIteracion.cargarArray(cat.id)">
+                <li ng-repeat="cat in objIteracion.catEquipos" ng-click="objIteracion.cargarArray(cat.id)" ng-class="{categoriaSeleccionada: cat.id == objIteracion.categoriaSeleccionada }">
                     {{cat.name}}
                 </li>
             </ul>

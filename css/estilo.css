@@ -568,6 +568,11 @@ header nav a p:hover{
         padding: 1.5em;
 }
 
+.categoriaSeleccionada{
+    background: #7B7B75;
+    color: #FFF;
+}
+
 h2.zero,p.zero {
     margin:0;
     padding:0

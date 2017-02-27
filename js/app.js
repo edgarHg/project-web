@@ -6,7 +6,7 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 templateUrl: 'view/home.html',
                 controller: 'MainController'
             })
-            .when('/equipos', {
+            .when('/equipos/:tipo?/:filtro?/:descripcion?', {
                 templateUrl: 'view/equipos.html',
                 controller: 'EquiposController'
             })
@@ -19,7 +19,7 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
 
     }])
 
-    .controller('EquiposController', ['$scope', 'Modal', 'cEquipos', function ($scope, Modal, cEquipos) {
+    .controller('EquiposController', ['$scope', 'Modal', 'cEquipos', '$routeParams',function ($scope, Modal, cEquipos,$routeParams) {
 
         /*
          id = equivale que tipo de e1uipo es
@@ -54,8 +54,10 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             gridList: 'gallery',
             arrFiltrosCategoria: [],
             selected: {filtros: []},
+            categoriaSeleccionada : 100,
             cargarArray: function (tipo) {
-                console.log(tipo);
+                this.categoriaSeleccionada = tipo;
+
                 var idEquipo = tipo;
                 this.paginacion.paginaActual = 0;
                 if (idEquipo == 100) {
@@ -149,8 +151,18 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 return cEquipos.desbrosadoras;
             },
             Iniciar: function () {
-                this.arrFiltrado = this.Todos();
-                this.paginacion.ConstruirPaginado(this.arrFiltrado);
+                    var tipo = $routeParams.tipo;
+                    var tipoFiltro = $routeParams.filtro;
+                    var descripcion = $routeParams.descripcion;
+
+                    this.categoriaSeleccionada = tipo;
+                    if(tipo == 1){
+                           this.FiltrarHidrolavadoras({tipo:tipo, idTipo:tipoFiltro,name:descripcion});
+                    }else{
+                        this.arrFiltrado = this.Todos();
+                        this.paginacion.ConstruirPaginado(this.arrFiltrado);
+                        this.categoriaSeleccionada = 100;
+                    }
             },
             CambiarGridList: function (tipo) {
                 if (tipo == 'lista') {
@@ -169,8 +181,36 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             CerrarModal: function () {
                 Modal.cerrarModal();
             },
+            FiltrarHidrolavadoras: function(tipo){
+
+                $scope.objIteracion.selected.filtros = [{id:parseInt(tipo.tipo), idTipo:parseInt(tipo.idTipo),name:tipo.name}];
+                var filt = "";
+                if(tipo.idTipo == 1 || tipo.idTipo == 2 || tipo.idTipo == 3){
+                    filt = JSLINQ(cEquipos.hidrolavadoras).
+                        Where(function (item) {
+                            return item.idMotor == tipo.idTipo;
+                        });
+                }
+                if(tipo.idTipo == 4 || tipo.idTipo == 5){
+                    filt = JSLINQ(cEquipos.hidrolavadoras).
+                        Where(function (item) {
+                            return item.idSerie == tipo.idTipo;
+                        });
+                }
+                if(tipo.idTipo == 6 || tipo.idTipo == 7 || tipo.idTipo == 8){
+                    filt = JSLINQ(cEquipos.hidrolavadoras).
+                        Where(function (item) {
+                            return item.idTipoAgua == tipo.idTipo;
+                        });
+                }
+                this.arrFiltrado = filt.items;
+                this.paginacion.ConstruirPaginado(this.arrFiltrado);
+                this.arrFiltrosCategoria = this.GetFiltrosCategorias(1);
+
+            },
             FiltrarEquipos: function (tipo) {
                 var arrSeleccionados = $scope.objIteracion.selected.filtros;
+                console.log(arrSeleccionados);
                 this.arrFiltrado= [];
                 if(tipo == 1){
                     if(arrSeleccionados.length == 0){
