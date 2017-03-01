@@ -1,10 +1,5 @@
 <div id="da-slider" class="da-slider da-slider-secundario">
-    <div class="" style="       /* background: #ff0000; */
-    display: block;
-    margin: 0 auto;
-    height: 100px;
-    width: 362.5px;
-    margin-top: 5px;">
+    <div class="sliderContenidoVentanas">
         <img src="images/sediap-logo.png" style="height: 100px" class="slideDown" alt="Logo SEDIAP"/>
     </div>
 </div>
@@ -38,11 +33,9 @@
             <div>
                 <sub>Equipos</sub>
                 <div class="filtros-select">
-                <select class="select width-190" ng-options="filt.id  as filt.name for filt in objIteracion.catEquipos" ng-model="objIteracion.idCatEquipos" ng-change="objIteracion.cargarArray(objIteracion.idCatEquipos)">
-                    </select>
-                    <!--<select class="select width-190" ng-options="filt.id as filt.name for filt in objIteracion.arrFiltrosCategoria" ng-model="objIteracion.idFiltroEquipo" >-->
-                        <!--<option>ver</option>-->
-                    <!--</select>-->
+                    <div class="select-wrapper">
+                        <select class="select width-200" ng-options="filt.id  as filt.name for filt in objIteracion.catEquipos" ng-model="objIteracion.idCatEquipos" ng-change="objIteracion.cargarArray(objIteracion.idCatEquipos)"> </select>
+                    </div>
                 </div>
             </div>
             <hr class="modules">

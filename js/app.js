@@ -1,4 +1,4 @@
-angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 'cCatalogos'])
+angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 'cCatalogos','filtros','directivas'])
 
     .config(function ($routeProvider) {
         $routeProvider
@@ -7,7 +7,11 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             })
             .when('/equipos/:tipo?/:filtro?/:descripcion?', {
                 templateUrl: 'view/equipos.html',
-                controller: 'EquiposController'
+                controller: 'ctrlEquipos'
+            })
+            .when('/contacto', {
+                templateUrl: 'view/contacto.html',
+                controller: 'ctrlContacto'
             })
             .otherwise({
                 redirectTo: '/'
@@ -17,10 +21,12 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
     .controller('ctrlMenu', ['$scope',function ($scope) {
         $scope.objMenu = {
             menuSeleccionado: 'home',
+            classfooter :'normal-footer',
             ItemSeleccionado : function(idMenu){
                 console.log(idMenu);
                 if(idMenu == 'home'){
                     $scope.objMenu.menuSeleccionado = 'home';
+                    this.CambiarFooter('normal-footer');
                 }
                 if(idMenu == 'equipos'){
                     $scope.objMenu.menuSeleccionado = 'equipos';
@@ -37,12 +43,15 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 if(idMenu == 'contacto'){
                     $scope.objMenu.menuSeleccionado = 'contacto';
                 }
+            },
+            CambiarFooter:function(tipo){
+                $scope.objMenu.classfooter = tipo;
             }
         };
     }])
 
-    .controller('EquiposController', ['$scope', 'Modal', 'cEquipos', '$routeParams',function ($scope, Modal, cEquipos,$routeParams) {
-
+    .controller('ctrlEquipos', ['$scope', 'Modal', 'cEquipos', '$routeParams',function ($scope, Modal, cEquipos,$routeParams) {
+            $scope.objMenu.ItemSeleccionado('equipos');
         /*
          id = equivale que tipo de e1uipo es
          1 = hidrolavadora
@@ -308,9 +317,6 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             }
         };
         $scope.objIteracion.Iniciar();
-        $scope.hola = function () {
-            console.log("ss");
-        }
     }])
 
     .controller('ctrlModalCotizacion', ['$scope', 'Modal', function ($scope, Modal) {
@@ -320,6 +326,14 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             }
         };
     }])
+
+        .controller('ctrlContacto', ['$scope', function ($scope) {
+            $scope.objMenu.ItemSeleccionado('contacto');
+            $scope.objMenu.CambiarFooter('ajuste-footer');
+            console.log("Contacto");
+    }])
+
+
 
 
 

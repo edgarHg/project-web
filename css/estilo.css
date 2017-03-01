@@ -16,6 +16,7 @@ a{
 p{
     color: #000;
     line-height: 20px;
+    text-align: left;
 }
 
 h2{
@@ -55,16 +56,132 @@ header{
     background: #35393c;
     width: 100%;
 }
+input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0.375em;
+    border: 0;
+    box-shadow: inset 0 0 0 2px #F56A6A;
+    color: #F56A6A !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 700;
+    height: 3.5em;
+    letter-spacing: 0.075em;
+    line-height: 3.5em;
+    padding: 0 2.25em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    }
+
+input[type="submit"].special, input[type="reset"].special, input[type="button"].special, button.special, .button.special {
+    background-color: #35393C;
+    box-shadow: none;
+    color: #FFF !important;
+}
+
+input, select, textarea{
+    color: #7F888F;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="search"], input[type="url"], textarea, select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: #FFF;
+    border-radius: 0 0.375em 0.375em 0;
+    border: none;
+    border: solid 1px rgba(210, 215, 217, 0.75);
+    color: inherit;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+    width: 95.5%;
+    font-family: "Ubuntu-L";
+    padding-left: 1%;
+    -webkit-transition: all 0.3s  ease-in-out;
+    -moz-transition: all 0.3s  ease-in-out;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="search"], input[type="url"], select {
+    height: 2.75em;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="url"]:focus, select:focus, textarea:focus {
+    outline: 1px solid #7B7B7B; 
+}
+
 .select{
     background: rgba(0, 0, 0, 0);
     font-size: 1em;
-    height: 2em;
     padding: 5px;
     display: block;
     margin-right: 20px;
 }
-.width-190{
-    width: 190px;
+.select-wrapper{
+        text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+.select-wrapper:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+   font-family: 'iconFontsediap' !important;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+    color: rgba(210, 215, 217, 0.75);
+   content: "\f078";
+    display: block;
+    height: 2.75em;
+    line-height: 2.75em;
+    pointer-events: none;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 0;
+    width: 2.75em;
+}
+.formulario{
+    padding: 1em 1em 0.5em 1.5em;
+    margin: 0 0 30px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.17) 0 5px 13px;
+    -moz-box-shadow: rgba(0,0,0,0.17) 0 5px 13px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0 5px 13px;
+}
+.formulario .row{
+    margin-bottom: 15px;
+}
+.row-form{
+    display: flex;
+    justify-content: flex-end;
+}
+.span-icon{    
+    font-size: 2em;
+    padding: 0.2em;
+    /*background-color: #F56A6A;*/
+    background-color: #35393C;
+    color: #FFF;
+    width: 32px;
+    display: flex;
+    align-items: center;
+}
+.width-200{
+    width: 200px;
 }
 
 .box{
@@ -578,27 +695,78 @@ header nav a p:hover{
     color: #EFC34A;
 }
 
+.sliderContenidoVentanas{ 
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+    width: 362.5px;
+    margin-top: 5px;
+
+    }
 h2.zero,p.zero {
     margin:0;
     padding:0
 }
 
+/*Contactos*/
+.contacto-empresa{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 0 75px;
+}
+.ico-contacto-empresa{
+     justify-content: flex-end;
+    display: flex;
+    padding-right: 10px;   
+}
+ .ico-span{
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #7B7B7B;
+    color: #35393C;
+    text-align: center;
+    font-size: 2em;
+    padding: 0.3em;
+    color: #35393C;
+    width: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        height: 32px;
+}
+
 /* Hover perron */
 
 footer{
-    background-color: rgb(260,46,52);
+    background-color: rgba(255, 45, 52, 0.8);
+    /*background-color: rgb(260,46,52);*/
     height: 50px;
     width: 100%;
 }
+.height-100{
+    height: 100%;
+}
 .logo_footer{
-    width: 210px;
-    height: 80%;
-    margin-left: 1em;
+       padding-left: 1em;
 }
 .logo_footer span{
     color: #fff;
 }
-
+.normal-footer{
+    position: static;
+}
+.ajuste-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.icon-redes-sociales{
+    font-size: 2.2em;
+    color: #FFF;
+    margin-right: 25px;
+}
 
 /*
 Medias
