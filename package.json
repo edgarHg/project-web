@@ -1,0 +1,31 @@
+{
+  "name": "sediap",
+  "version": "1.0.0",
+  "description": "Pagina web de SEDIAP",
+  "main": " gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.1.1",
+    "imagemin-pngcrush": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgarHg/project-web.git"
+  },
+  "keywords": [
+    "gulp",
+    "javascript"
+  ],
+  "author": "Edgar Hernandez Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edgarHg/project-web/issues"
+  },
+  "homepage": "https://github.com/edgarHg/project-web#readme"
+}

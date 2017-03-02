@@ -9,6 +9,10 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 templateUrl: 'view/equipos.html',
                 controller: 'ctrlEquipos'
             })
+            .when('/refacciones', {
+                templateUrl: 'view/refacciones.html',
+                controller: 'ctrlRefacciones'
+            })            
             .when('/contacto', {
                 templateUrl: 'view/contacto.html',
                 controller: 'ctrlContacto'
@@ -327,11 +331,16 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
         };
     }])
 
-        .controller('ctrlContacto', ['$scope', function ($scope) {
+    .controller('ctrlRefacciones', ['$scope', 'Modal', 'cEquipos', '$routeParams',function ($scope, Modal, cEquipos,$routeParams) {
+        $scope.objMenu.ItemSeleccionado('refacciones');
+    }])
+
+    .controller('ctrlContacto', ['$scope', function ($scope) {
             $scope.objMenu.ItemSeleccionado('contacto');
             $scope.objMenu.CambiarFooter('ajuste-footer');
             console.log("Contacto");
-    }])
+    }]);
+
 
 
 

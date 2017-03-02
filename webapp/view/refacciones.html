@@ -1,0 +1,116 @@
+<div id="da-slider" class="da-slider da-slider-secundario">
+    <div class="sliderContenidoVentanas">
+        <img src="images/sediap-logo.png" style="height: 100px" class="slideDown" alt="Logo SEDIAP"/>
+    </div>
+</div>
+<section class="row margin-top-20">
+    <aside class="col-xs-2 gridFiltros">
+        <section class="filtros_productos">
+            <div class="title-producto">
+                <h2>Categorías</h2>
+            </div>
+            <ul>
+                <li ng-repeat="cat in objIteracion.catEquipos" ng-click="objIteracion.cargarArray(cat.id)" ng-class="{categoriaSeleccionada: cat.id == objIteracion.categoriaSeleccionada }">
+                    {{cat.name}}
+                </li>
+            </ul>
+        </section>
+        <section class="filtros_productos" ng-if="objIteracion.arrFiltrosCategoria.length > 0">
+            <div class="title-producto">
+                <h2>Filtros</h2>
+            </div>
+            <div class="checkList_productos">
+                <div ng-repeat="filt in objIteracion.arrFiltrosCategoria">
+                    <input type="checkbox" class="checnbox-filtros" ng-click="objIteracion.FiltrarEquipos(filt.id)" checklist-model="objIteracion.selected.filtros" checklist-value="filt">
+                    {{filt.name}}
+                </div>
+            </div>
+        </section>
+    </aside>
+
+    <aside class="col-xs-10 gridProductos">
+        <aside class="contenido-header">
+            <div>
+                <sub>Refacciones</sub>
+                <div class="filtros-select">
+                    <div class="select-wrapper">
+                        <select class="select width-200" ng-options="filt.id  as filt.name for filt in objIteracion.catEquipos" ng-model="objIteracion.idCatEquipos" ng-change="objIteracion.cargarArray(objIteracion.idCatEquipos)"> </select>
+                    </div>
+                </div>
+            </div>
+            <hr class="modules">
+        </aside>
+
+        <aside class="detalles-productos">
+            <section class="paginado_vacio">
+                <div>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</div>
+            </section>
+            <section class="paginado">
+                <a ng-click="objIteracion.paginacion.paginaAnterior()">
+                    <span class="icon-chevron-left"></span>Anterior
+                </a>
+                <label>{{(objIteracion.paginacion.paginaActual + 1)}} de {{objIteracion.paginacion.paginasBusqueda.length}}</label>
+                <a ng-click="objIteracion.paginacion.paginaSiguiente()">
+                    Siguiente <span class="icon-chevron-right"></span>
+                </a>
+            </section>
+            <section class="opcionesEquipos">
+                <div class="cuadriculas">
+                    <a ng-click="objIteracion.CambiarGridList('grid')">
+                        <span class="icon-grid ico-views inactivo" title="Cuadricula" ng-class="{'ico-activo':objIteracion.gridList == 'gallery'}"></span>
+                    </a>
+                    <a ng-click="objIteracion.CambiarGridList('lista')">
+                        <span class="icon-list ico-views inactivo" title="Lista" ng-class="{'ico-activo':objIteracion.gridList == 'lista'}"></span>
+                    </a>
+                </div>
+            </section>
+        </aside>
+        <ul ng-class="objIteracion.gridList">
+            <!--<li ng-repeat="eq in objIteracion.arrFiltrado">-->
+            <li ng-repeat="eq in objIteracion.paginacion.paginasBusqueda[objIteracion.paginacion.paginaActual]">
+                <article class="box">
+                    <figure>
+                        <img ng-src="images/equipos/{{eq.img}}">
+                    </figure>
+                    <div class="sup-gallery">
+                        <a ng-click="objIteracion.OpenModalCotizacion(eq)" class="btn red" title="Cotizar" ng-class="{'descripcion-oculto':objIteracion.gridList == 'lista'}">
+                            <span class=" icon-clipboard" title="Cotizar"></span>
+                        </a>
+                        <a ng-click="objIteracion.OpenModalDetalle(eq)" class="btn red" title="Detalle" ng-class="{'descripcion-oculto':objIteracion.gridList == 'lista'}">
+                            <span class="icon-cog" title="Detalle"></span>
+                        </a>
+                    </div>
+                    <div class="grid-textos">
+                            <div class="content-lista">
+                                <h3>{{eq.name}}</h3>
+                                <sup>{{eq.marca + " " + eq.modelo}}</sup>
+                                <div class="especificaciones-lista">
+                                    <div class="especificaciones">
+                                        <p ng-if="eq.presion != null"><b>Presión: </b>{{eq.presion}}</p>
+                                        <p><b>Potencia: </b>{{eq.potencia_de_motor}}</p>
+                                        <p><b>Motor: </b>{{eq.descMotor}}
+                                            <label class="text-negro" ng-if="eq.idMotor == 1">&nbsp;&nbsp;&nbsp;<br> <b ng-if="eq.idTipo == 1"> Voltaje: </b>{{eq.voltaje}}</label>
+                                            <label class="text-negro" ng-if="eq.idMotor == 2 || eq.idMotor == 3"><b>Consumo: </b>{{eq.consumo}}</label>
+                                        </p>
+                                        <p ng-if="eq.caldera != null"><b>Caldera: </b>{{eq.caldera}} &nbsp;&nbsp;</p>
+                                        <p><b>Peso: </b>{{eq.peso}} &nbsp;&nbsp;</p>
+                                    </div>
+                                    <div class="descripciones">
+                                        <p ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
+                                            {{eq.descripcion}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sup-gallery">
+                                <a ng-click="objIteracion.OpenModalCotizacion(eq)" class="btn red" title="Cotizar" ng-class="{'descripcion-oculto':objIteracion.gridList == 'gallery'}">
+                                    <span class=" icon-clipboard">&nbsp;</span>Cotizar
+                                </a>
+                            </div>
+                    </div>
+                </article>
+
+            </li>
+        </ul>
+    </aside>
+</section>
