@@ -4,3 +4,5 @@
 # Otros archivos ocultos
 .DS_Store
 .gitignore
+
+/webapp
