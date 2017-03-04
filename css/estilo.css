@@ -102,7 +102,7 @@ input[type="text"],input[type="password"], input[type="email"], input[type="tel"
     -ms-appearance: none;
     appearance: none;
     background: rgba(0,0,0,0);
-    border-radius: 0 0.375em 0.375em 0;
+    /*border-radius: 0 0.375em 0.375em 0;*/
     border: none;
     color: inherit;
     display: block;
@@ -119,14 +119,10 @@ input[type="text"], input[type="password"], input[type="email"], input[type="tel
     height: 2.75em;
 }
 
-input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="url"]:focus, select:focus, textarea:focus {
-    outline: 1px solid #7B7B7B; 
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="url"]:focus, select:focus, textarea:focus {
+        border-bottom: 2px solid #7B7B7B;
+    margin-bottom: 0px;
 }
-input[type="text"]:focus ~ .col-xs-12{
-
-    border-bottom: 1px solid #7B7B7B; 
-}
-
 .select{
     background: rgba(0, 0, 0, 0);
     font-size: 1em;
@@ -738,7 +734,10 @@ h2.zero,p.zero {
     padding: 0px 0 75px;
 }
 .contacnos{
-    margin-top: 2em;
+    margin-top: 4.1em;
+}
+.servicios p{
+    text-align: center;
 }
 .ico-contacto-empresa{
      justify-content: flex-end;
