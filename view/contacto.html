@@ -38,49 +38,50 @@
             </aside>
 
             
-            <div class="row contacnos" style="    display: flex;
-    justify-content: space-between;">
+            <div class="row contacnos">
                 <aside class="col-xs-4">
                     <div style="width: 100%;height:250px;background: #fff; "> </div>
                 </aside>
                 <aside class="col-xs-7">
-                    <form style="padding: 0.5em 2em;
-    background-color: #E6E6E6;">
+                    <div class="header-contactanos"><h4>Si tiene alguna pregunta, no dude en ponerse en contacto con nosotros</h4></div>
+                    <form class="formContactanos">
                         <div class="row">
-                            <div class="col-xs-12" style="display: flex;flex-direction: row;border-bottom: solid 2px #D2D7D9;    margin: 0.5em 0;">
+                            <div class="col-xs-12 rowFormulario">
                                 <span class="icon-user-circle span-icon"></span>
                                 <input type="text" placeholder="Nombre" name="nombre">
                             </div>
                         </div>
                         <div class="row">
-                             <div class="col-xs-12" style="display: flex;flex-direction: row;border-bottom: solid 2px #D2D7D9;    margin: 0.5em 0;">
+                             <div class="col-xs-12 rowFormulario">
                                   <span class="icon-envelope-o span-icon"></span>
                                   <input type="email" placeholder="Correo" name="email">
                             </div>
                         </div>
                         <div class="row">
-                             <div class="col-xs-12" style="display: flex;flex-direction: row;border-bottom: solid 2px #D2D7D9;    margin: 0.5em 0;">
+                             <div class="col-xs-12 rowFormulario">
                                  <span class="icon-phone span-icon"></span>
                                 <input type="text" placeholder="N. Teléfonico" name="celular" phone-input  ng-model="objcontacto.telefono" min="8">
                             </div>
                         </div>
                         <div class="row">
-                           <div class="col-xs-12" style="display: flex;flex-direction: row;border-bottom: solid 2px #D2D7D9;    margin: 0.5em 0;">
+                           <div class="col-xs-12 rowFormulario">
                                  <span class="icon-bullhorn span-icon"></span>
                                 <input type="text" placeholder="Asunto" name="asunto" ng-model="objcontacto.asunto">
                             </div>
                         </div>
                         <div class="row">
-                          <div class="col-xs-12" style="display: flex;flex-direction: row;border-bottom: solid 2px #D2D7D9;    margin: 0.5em 0;">
+                          <div class="col-xs-12 rowFormulario">
                                 <span class="icon-comment-o span-icon"></span>
                                 <textarea name="mensaje" placeholder="Ingrese su mensaje" rows="6"></textarea>
                             </div>
                         </div>
+                        <br>
                         <div class="row start-xs">
-                            <div class="col-xs">
-                                <input type="submit" value="Enviar" class="special">
+                            <div class="col-xs-12">
+                                <input type="submit" value="Enviar mensaje" class="special width-100">
                             </div>
                         </div>
+                        <br>
                     </form>
                 </aside>
 
