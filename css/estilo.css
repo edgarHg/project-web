@@ -721,18 +721,18 @@ h2.zero,p.zero {
 }
 .nuestra-direccion{
     background-color: #E6E6E6;
-    padding: 2em 1em;
+    /*padding: 2em 1em;*/
     justify-content: space-around;
-    height: 200px;
+    /*height: 200px;*/
 }
 .nuestra-direccion-item{
     max-width: 400px;
-    width: 100%;
+    min-width: 270px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-        justify-content: space-between;
+    justify-content: space-between;
+    padding: 2em 0;
 }
 .contacto-empresa{
     display: flex;
@@ -744,7 +744,7 @@ h2.zero,p.zero {
     margin-top: 4.1em;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5em;
+    margin-bottom: 6.5em;
 }
 .servicios p{
     text-align: center;
@@ -762,6 +762,12 @@ h2.zero,p.zero {
 }
 .width-100{
     width: 100%;    
+}
+.maps{
+    width: 40%;
+}
+.formularioContactanos{
+    width: 55%;
 }
 .formContactanos{
     padding: 1.5em 2em;
@@ -900,6 +906,17 @@ Medias
     .detalles-productos {
         justify-content: center;
     }
+          .contacnos{
+        flex-direction: column;
+        align-items: center;
+    }
+        .formularioContactanos{
+        margin-top: 2em;
+    }
+    .formularioContactanos, .maps{
+        width: 90%;
+        margin-bottom: 1em;
+    }
 }
 
 @media only screen and (min-width : 481px) and (max-width : 767px) {
@@ -922,6 +939,17 @@ Medias
     }
     .detalles-productos {
         justify-content: center;
+    }
+        .contacnos{
+        flex-direction: column;
+        align-items: center;
+    }
+        .formularioContactanos{
+        margin-top: 2em;
+    }
+    .formularioContactanos, .maps{
+        width: 90%;
+        margin-bottom: 1em;
     }
 }
 
@@ -999,6 +1027,17 @@ Medias
     .contenido-header div.filtros-select{
         display: flex;
         margin-left: 20px;
+    }
+    .contacnos{
+        flex-direction: column;
+        align-items: center;
+    }
+    .formularioContactanos{
+        margin-top: 2em;
+    }
+    .formularioContactanos, .maps{
+        width: 90%;
+        margin-bottom: 1em;
     }
 }
 

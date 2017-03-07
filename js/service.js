@@ -17,3 +17,14 @@ angular.module('ngService',[])
             },
         };
     }])
+
+    .factory('ServiciosHTTP', ['$resource', function ($resource) {
+            return {
+                post: function (datos, servicio) {
+                    var urlApi = 'https://api-rest-sediap.herokuapp.com',
+                            resource = $resource(urlApi + servicio),
+                            resultado = resource.save({}, datos);
+                    return resultado;
+                }
+            }
+        }])

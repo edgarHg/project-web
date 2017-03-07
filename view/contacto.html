@@ -19,7 +19,7 @@
                         <span class="icon-map-marker ico-span"></span>
                     </div>
                     <h3>Dirección</h3>
-                        <p>Carretera la Isla KM. 1, Colonia Miguel Hidalgo, 00000. <br>Villahermosa, Tab. México</p>
+                        <p>Carretera la Isla KM. 1, Colonia Miguel Hidalgo III, 86127. <br>Villahermosa, Tab. México</p>
                 </div>
                 <div class="nuestra-direccion-item">
                     <div class="icon-item-nuestra-direccion">
@@ -39,46 +39,46 @@
 
             
             <div class="row contacnos">
-                <aside class="col-xs-4">
-                    <div style="width: 100%;height:250px;background: #fff; "> </div>
+                <aside class="maps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1978.1218468211!2d-92.98552273961032!3d17.97970408907132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfe214d658d4879f3!2sCentro+de+Servicio+%22Sediap%22!5e0!3m2!1ses-419!2smx!4v1488836115593" style="width:100%;    box-shadow: rgba(0, 0, 0, 0.3) 0 0 13px;" height="620" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </aside>
-                <aside class="col-xs-7">
+                <aside class="formularioContactanos">
                     <div class="header-contactanos"><h4>Si tiene alguna pregunta, no dude en ponerse en contacto con nosotros</h4></div>
                     <form class="formContactanos">
                         <div class="row">
                             <div class="col-xs-12 rowFormulario">
                                 <span class="icon-user-circle span-icon"></span>
-                                <input type="text" placeholder="Nombre" name="nombre">
+                                <input type="text" placeholder="Nombre" name="nombre" ng-model="contactanos.mdlContactanos.nombre">
                             </div>
                         </div>
                         <div class="row">
                              <div class="col-xs-12 rowFormulario">
                                   <span class="icon-envelope-o span-icon"></span>
-                                  <input type="email" placeholder="Correo" name="email">
+                                  <input type="email" placeholder="Correo" name="email" ng-model="contactanos.mdlContactanos.correo">
                             </div>
                         </div>
                         <div class="row">
                              <div class="col-xs-12 rowFormulario">
                                  <span class="icon-phone span-icon"></span>
-                                <input type="text" placeholder="N. Teléfonico" name="celular" phone-input  ng-model="objcontacto.telefono" min="8">
+                                <input type="text" placeholder="N. Teléfonico" name="celular" phone-input  ng-model="contactanos.mdlContactanos.telefono" min="8">
                             </div>
                         </div>
                         <div class="row">
                            <div class="col-xs-12 rowFormulario">
                                  <span class="icon-bullhorn span-icon"></span>
-                                <input type="text" placeholder="Asunto" name="asunto" ng-model="objcontacto.asunto">
+                                <input type="text" placeholder="Asunto" name="asunto" ng-model="contactanos.mdlContactanos.asunto">
                             </div>
                         </div>
                         <div class="row">
                           <div class="col-xs-12 rowFormulario">
                                 <span class="icon-comment-o span-icon"></span>
-                                <textarea name="mensaje" placeholder="Ingrese su mensaje" rows="6"></textarea>
+                                <textarea name="mensaje" placeholder="Ingrese su mensaje" rows="6" ng-model="contactanos.mdlContactanos.mensaje"></textarea>
                             </div>
                         </div>
                         <br>
                         <div class="row start-xs">
                             <div class="col-xs-12">
-                                <input type="submit" value="Enviar mensaje" class="special width-100">
+                                <input type="submit" value="Enviar mensaje" class="special width-100" ng-click="contactanos.BtnEnviarCorreo()">
                             </div>
                         </div>
                         <br>

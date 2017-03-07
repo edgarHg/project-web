@@ -1,4 +1,4 @@
-angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 'cCatalogos','filtros','directivas'])
+angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 'cCatalogos','filtros','directivas','ngResource','mContactanos'])
 
     .config(function ($routeProvider) {
         $routeProvider
@@ -15,7 +15,7 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             })            
             .when('/contacto', {
                 templateUrl: 'view/contacto.html',
-                controller: 'ctrlContacto'
+                controller: 'ctrlContactanos'
             })
             .otherwise({
                 redirectTo: '/'
