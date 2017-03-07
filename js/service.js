@@ -18,9 +18,11 @@ angular.module('ngService',[])
         };
     }])
 
-    .factory('ServiciosHTTP', ['$resource', function ($resource) {
+    .factory('ServiciosHTTP', ['$resource', '$http', function ($resource, $http) {
             return {
                 post: function (datos, servicio) {
+                     $http.defaults.headers.post['Content-Type'] = 'application/json; charset=UTF-8';
+                     //
                     var urlApi = 'https://api-rest-sediap.herokuapp.com',
                             resource = $resource(urlApi + servicio),
                             resultado = resource.save({}, datos);
