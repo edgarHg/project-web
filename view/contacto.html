@@ -8,9 +8,7 @@
             <aside class="servicios">
                 <sub>Contactanos</sub>
                 <hr>
-               <h2 style="    color: #000;
-    text-align: center;
-    text-transform: uppercase;"> Maneje su proyecto con profesionales</h2>
+               <h2> Maneje su proyecto con profesionales</h2>
              </aside>
     
             <aside class="row nuestra-direccion">
@@ -44,41 +42,42 @@
                 </aside>
                 <aside class="formularioContactanos">
                     <div class="header-contactanos"><h4>Si tiene alguna pregunta, no dude en ponerse en contacto con nosotros</h4></div>
-                    <form class="formContactanos">
+                    <form class="formContactanos" name="contactoForm" ng-submit="contactanos.BtnEnviarCorreo()" novalidate>
                         <div class="row">
                             <div class="col-xs-12 rowFormulario">
                                 <span class="icon-user-circle span-icon"></span>
-                                <input type="text" placeholder="Nombre" name="nombre" ng-model="contactanos.mdlContactanos.nombre">
+                                <input type="text" placeholder="Nombre" name="nombre" ng-model="contactanos.mdlContactanos.nombre" ng-class="{'has-error':contactoForm.nombre.$invalid && !contactoForm.nombre.$pristine}" required>
                             </div>
                         </div>
                         <div class="row">
                              <div class="col-xs-12 rowFormulario">
                                   <span class="icon-envelope-o span-icon"></span>
-                                  <input type="email" placeholder="Correo" name="email" ng-model="contactanos.mdlContactanos.correo">
+                                  <input type="email" placeholder="Correo" name="email" ng-model="contactanos.mdlContactanos.correo" ng-class="{'has-error':contactoForm.email.$invalid && !contactoForm.email.$pristine}" required>
                             </div>
                         </div>
                         <div class="row">
                              <div class="col-xs-12 rowFormulario">
                                  <span class="icon-phone span-icon"></span>
-                                <input type="text" placeholder="N. Teléfonico" name="celular" phone-input  ng-model="contactanos.mdlContactanos.telefono" min="8">
+                                <input type="text" placeholder="N. Teléfonico" name="celular" phone-input  ng-model="contactanos.mdlContactanos.telefono" min="8" ng-class="{'has-error':contactoForm.celular.$invalid && !contactoForm.celular.$pristine}"  required>
                             </div>
                         </div>
                         <div class="row">
                            <div class="col-xs-12 rowFormulario">
                                  <span class="icon-bullhorn span-icon"></span>
-                                <input type="text" placeholder="Asunto" name="asunto" ng-model="contactanos.mdlContactanos.asunto">
+                                <input type="text" placeholder="Asunto" name="asunto" ng-model="contactanos.mdlContactanos.asunto" ng-class="{'has-error':contactoForm.asunto.$invalid && !contactoForm.asunto.$pristine}" required>
                             </div>
                         </div>
                         <div class="row">
                           <div class="col-xs-12 rowFormulario">
                                 <span class="icon-comment-o span-icon"></span>
-                                <textarea name="mensaje" placeholder="Ingrese su mensaje" rows="6" ng-model="contactanos.mdlContactanos.mensaje"></textarea>
+                                <textarea name="mensaje" placeholder="Ingrese su mensaje" rows="6" ng-model="contactanos.mdlContactanos.mensaje" ng-minlength="15" ng-class="{'has-error':contactoForm.mensaje.$invalid && !contactoForm.mensaje.$pristine && contactoForm.mensaje.$error.minlength}" required></textarea>
                             </div>
                         </div>
                         <br>
                         <div class="row start-xs">
                             <div class="col-xs-12">
-                                <input type="submit" value="Enviar mensaje" class="special width-100" ng-click="contactanos.BtnEnviarCorreo()">
+                                <div class="loader" ng-if="!contactanos.btnActivo"></div>
+                                <button type="submit" class="special width-100" ng-disabled="contactoForm.$invalid" ng-if="contactanos.btnActivo">Enviar mensaje</button>
                             </div>
                         </div>
                         <br>

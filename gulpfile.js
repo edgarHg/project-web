@@ -5,11 +5,39 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var pngcrush = require('imagemin-pngcrush');
 var webserver = require('gulp-webserver');
+var minifyCSS = require('gulp-minify-css');
+var clean = require('gulp-clean');
 
+var bases = {
+    app: 'app/',
+    dist: 'webapp/'
+};
 
- gulp.task('minifyCss', function() {
-  console.log('minifying css ...');
-  return gulp.src([
+var paths = {
+    //Incluiremos todos los componentes dentro de app, exceptuando la carpeta lib (administrada por bower)
+    scripts: ['js/*.js'],
+    //Direccion de las librerias, estas las copiaremos integramente
+    libs: [
+      'vendor/modernizr.custom.28468.js',
+      'vendor/modernizr.custom.63321.js',
+      'vendor/jquery-1.11.3.min.js',
+      'vendor/jquery.cslider.js',
+      'vendor/jquery.catslider.js',
+      'vendor/JSLINQ.js',
+      'vendor/angular.min.js',
+      'vendor/angular-route.min.js',
+      'vendor/ngDialog.min.js',
+      'vendor/angular-resource.min.js',
+      'vendor/js/checks.js',
+      'vendor/js/filtros.js',
+      'vendor/js/directive.js',
+      'vendor/js/app.js',
+      'vendor/js/service.js',
+      'vendor/js/catalogos.js',
+      'vendor/js/contactanos.js'
+    ],
+    //Ubicacion de los archivos de estilos que minificaremos
+    styles: [
           'css/reset.css',
           'css/fonts.css',
           'css/flexboxgrid.css',
@@ -20,19 +48,45 @@ var webserver = require('gulp-webserver');
           'css/rejillas.css',
           'css/ngDialog.css',
           'css/ngDialog-theme-default.css',
-          'css/ngDialog-theme-plain.css'
-      ])
+          'css/ngDialog-theme-plain.css'],
+    //los archivos html que incluiremos en la minificacion
+    html: ['view/*.html'],
+    //La ruta de las imagenes que minificaremos
+    images: ['res/img/**/*.*'],
+    //Otros extras
+    extras: []
+};
+
+gulp.task('clean', function() {
+  return gulp.src(bases.dist)
+    .pipe(clean());
+});
+
+
+gulp.task('copy', ['clean'],function() {
+
+  gulp.src(paths.styles)
+    .pipe(minifyCSS())
     .pipe(concat('estilos.min.css'))
     .pipe(gulp.dest('webapp/css/'));
-});
 
-gulp.task('copyFonts', function() {
-  console.log('minifying css ...');
-  return gulp.src('fonts/*')
+  gulp.src('fonts/*')
     .pipe(gulp.dest('webapp/fonts'));
-});
 
-gulp.task('copyImages', function() {
+  gulp.src(paths.libs)
+    .pipe(concat('vendor.min.js'))
+    .pipe(gulp.dest('webapp/vendor'));
+
+  gulp.src('index.html')
+    .pipe(gulp.dest('webapp/'));
+  
+  gulp.src(paths.html)
+    .pipe(gulp.dest('webapp/view/'));
+
+  gulp.src(paths.scripts)
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest('webapp/js/'));
+
   gulp.src('images/**/*.{png,jpg,jpeg,gif,svg}')
     .pipe(imagemin({
       progressive: true,
@@ -42,58 +96,25 @@ gulp.task('copyImages', function() {
     .pipe(gulp.dest('webapp/images'));
 });
 
-
-gulp.task('angularjs', function() {
-  console.log('minifying js ...');
-  return gulp.src('vendor/angularjs/*.js')
-    .pipe(concat('angularjs.min.js'))
-    .pipe(gulp.dest('webapp/js/'));
-});
-
-gulp.task('jquery', function() {
-  console.log('minifying js ...');
-  return gulp.src('vendor/jquery/*.js')
-    .pipe(concat('jquery.min.js'))
-    .pipe(gulp.dest('webapp/js/'));
-});
-
-gulp.task('appJs', function() {
-  console.log('minifying js ...');
-  return gulp.src('js/*.js')
-    .pipe(concat('app.min.js'))
-    .pipe(gulp.dest('webapp/js/'));
-}); 
-
-gulp.task('copyView', function() {
-  console.log('copyView htmls ...');
-  return gulp.src('view/*.html')
-    .pipe(gulp.dest('webapp/view/'));
-});
- 
-gulp.task('copyIndex', function() {
-  console.log('copyIndex htmls ...');
-  return gulp.src('index.html')
-    .pipe(gulp.dest('webapp/'));
-});
-
 gulp.task('web_server', function() {
   gulp.src('webapp')
     .pipe(webserver({
       path:'/',
-      port:8010,
-      fallback: 'index.html'
+      port:8989,
+      fallback: 'index.html',
+      livereload: true,
     }));
 });
 
 
 gulp.task('watch', function() {
-
-  gulp.watch('css/*.css', ['minifyCss']);
-
-  gulp.watch('js/*.js', ['appJs']);
+  gulp.watch('css/*.css', ['copy']);
+  gulp.watch('js/*.js', ['copy']);
+  gulp.watch('view/*.html', ['copy']);
+  gulp.watch('*.html', ['copy']);
 });
 
-gulp.task('default', ['web_server','minifyCss','copyFonts','copyImages','jquery', 'angularjs', 'appJs','copyView','copyIndex','watch']);
+gulp.task('default', ['clean','copy','watch','web_server']);
 
 
 

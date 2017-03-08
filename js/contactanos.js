@@ -2,9 +2,11 @@ angular.module('mContactanos',[])
 
 .controller('ctrlContactanos', ['$scope', 'ServiciosHTTP', function($scope,ServiciosHTTP){
 	$scope.contactanos = {
+		btnActivo: true,
 		mdlContactanos : {},
 		BtnEnviarCorreo : function(){
 			console.log("new");
+			this.btnActivo = false;
 			this.EnviarCorreo();
 		},
 		EnviarCorreo : function(){
@@ -14,13 +16,15 @@ angular.module('mContactanos',[])
                     data = JSON.parse(data);
                     console.log(data);
                     if (data.codE == 0) {
+                    	$scope.contactanos.btnActivo = true;
                     	console.log(data);
                     } else {
+                    	$scope.contactanos.btnActivo = true;
                       console.log(data);
                     }
                 },
-                function (errResponse) {
-
+                function (errResponse) {	
+                	$scope.contactanos.btnActivo = true;
                 });
 		}
 	};	

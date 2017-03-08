@@ -20,7 +20,6 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             .otherwise({
                 redirectTo: '/'
             });
-
     })
 
 
@@ -57,32 +56,28 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
     }])
 
     .controller('ctrlEquipos', ['$scope', 'Modal', 'cEquipos', '$routeParams',function ($scope, Modal, cEquipos,$routeParams) {
-            $scope.objMenu.ItemSeleccionado('equipos');
         /*
          id = equivale que tipo de e1uipo es
          1 = hidrolavadora
          2 = motobombas
          3 = aspairadoras
          4 = generadores
-
          idSerie es definido como comercial o industrial
          1 = Industrial
          2 = Comercial
-
          idMotor es que tipo de Motor tiene el equipo
          1 = Electrica
          2 = Gasolina
          3 = Diesel
-
          idTipoAgua es que tipo de agua procesa fria, caliente o ambas
          1 = fria
          2 = caliente
          3 = caliente y fria
-
          Tamaño de Imagen 413 * 331 170 Resolucion
          */
-        $scope.catEquipos = cEquipos.tiposEquipos;
 
+        $scope.objMenu.ItemSeleccionado('equipos');
+        $scope.catEquipos = cEquipos.tiposEquipos;
         $scope.objIteracion = {
             idCatEquipos: 100,
             idFiltroEquipo :1,
@@ -243,7 +238,6 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 this.arrFiltrado = filt.items;
                 this.paginacion.ConstruirPaginado(this.arrFiltrado);
                 this.arrFiltrosCategoria = this.GetFiltrosCategorias(1);
-
             },
             FiltrarEquipos: function (tipo) {
                 var arrSeleccionados = $scope.objIteracion.selected.filtros;

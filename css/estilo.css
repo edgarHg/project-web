@@ -121,9 +121,40 @@ input[type="text"], input[type="password"], input[type="email"], input[type="tel
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="url"]:focus, select:focus, textarea:focus {
-        border-bottom: 2px solid #7B7B7B;
-    margin-bottom: 0px;
+    border-color: #66AFE9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(102, 175, 233, 0.6);
 }
+
+button[type="submit"]:disabled {
+       opacity: 0.8;
+}
+
+
+/*
+        Loading
+
+ */
+
+.loader {
+    border: 5px solid #F3F3F3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 .select{
     background: rgba(0, 0, 0, 0);
     font-size: 1em;
@@ -319,6 +350,11 @@ header nav a p:hover{
     margin: 0 auto;
     padding-top: 10px;
 }
+.servicios h2{
+    color: #000; 
+    text-align: center; 
+    text-transform: uppercase;
+}
 .titulo-servicios{
     background-color: #E6E6E6;
     padding: 10px 0;
@@ -439,6 +475,7 @@ header nav a p:hover{
     width: 98%;
 
 }
+
 
 /* * * * * * * * * * * * * * * * * * * * *
 *       Paginacion                       *
@@ -744,7 +781,7 @@ h2.zero,p.zero {
     margin-top: 4.1em;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6.5em;
+    margin-bottom: 4.1em;
 }
 .servicios p{
     text-align: center;
@@ -822,6 +859,13 @@ h2.zero,p.zero {
     background-color: #35393C;
     color: #FFF;
 }
+
+.has-error{
+    border-color: #A94442 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+}
+
 /* Hover perron */
 
 footer{
