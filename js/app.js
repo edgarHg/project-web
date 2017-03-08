@@ -22,6 +22,8 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             });
 
     })
+
+
     .controller('ctrlMenu', ['$scope',function ($scope) {
         $scope.objMenu = {
             menuSeleccionado: 'home',
