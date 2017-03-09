@@ -29,7 +29,7 @@
     </aside>
 
     <aside class="col-xs-10 gridProductos">
-        <aside class="contenido-header">
+<!--         <aside class="contenido-header">
             <div>
                 <sub>Equipos</sub>
                 <div class="filtros-select">
@@ -39,8 +39,17 @@
                 </div>
             </div>
             <hr class="modules">
+        </aside> -->
+        <aside class="servicios">
+                <sub>Equipos</sub>
+                <hr>
+               <h2 class="equipos">Hidrolavadoras</h2>
+                <div class="filtros-select">
+                    <div class="select-wrapper">
+                        <select class="select width-200" ng-options="filt.id  as filt.name for filt in objIteracion.catEquipos" ng-model="objIteracion.idCatEquipos" ng-change="objIteracion.cargarArray(objIteracion.idCatEquipos)"> </select>
+                    </div>
+                </div>
         </aside>
-
         <aside class="detalles-productos">
             <section class="paginado_vacio">
                 <div>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</div>

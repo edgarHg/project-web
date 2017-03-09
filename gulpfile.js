@@ -63,7 +63,7 @@ gulp.task('clean', function() {
 });
 
 
-gulp.task('copy', ['clean'],function() {
+gulp.task('copy', function() {
 
   gulp.src(paths.styles)
     .pipe(minifyCSS())
@@ -100,7 +100,7 @@ gulp.task('web_server', function() {
   gulp.src('webapp')
     .pipe(webserver({
       path:'/',
-      port:8989,
+      port:7070,
       fallback: 'index.html',
       livereload: true,
     }));
@@ -114,7 +114,7 @@ gulp.task('watch', function() {
   gulp.watch('*.html', ['copy']);
 });
 
-gulp.task('default', ['clean','copy','watch','web_server']);
+gulp.task('default', ['watch','copy','web_server']);
 
 
 

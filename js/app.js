@@ -17,6 +17,10 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 templateUrl: 'view/contacto.html',
                 controller: 'ctrlContactanos'
             })
+            .when('/proyectos', {
+                templateUrl: 'view/proyectos.html',
+                controller: ''
+            })
             .otherwise({
                 redirectTo: '/'
             });
