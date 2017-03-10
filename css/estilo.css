@@ -382,6 +382,7 @@ header nav a p:hover{
     padding: 0px;
     justify-content: space-between;
     cursor: pointer;
+    width: 100%;
 }
 
 .caption-style-3 li{

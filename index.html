@@ -8,73 +8,44 @@
     <meta name="keywords" content=""/>
     <meta name="author" content="Edgar Hernandez Garcia"/>
     <link rel="shortcut icon" href="../favicon.ico">
- <!--    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/flexboxgrid.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="css/slider.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/banner.css">
-    <link rel="stylesheet" href="css/rejillas.css">
-    <link rel="stylesheet" href="css/ngDialog.css">
-    <link rel="stylesheet" href="css/ngDialog-theme-default.css">
-    <link rel="stylesheet" href="css/ngDialog-theme-plain.css"> -->
      <link rel="stylesheet" href="css/estilos.min.css">
 </head>
 <body ng-controller="ctrlMenu">
-<header>
-    <nav class="row center-xs middle-xs nav-menu">
-        <a href="/" ng-click="objMenu.ItemSeleccionado('home')"><p ng-class="{itemMenuSeleccionado: 'home' == objMenu.menuSeleccionado}">Home</p></a>
-        <div class="separador">/</div>
-        <a href="#!/equipos" ng-click="objMenu.ItemSeleccionado('equipos')"><p ng-class="{itemMenuSeleccionado: 'equipos' == objMenu.menuSeleccionado}">Equipos</p></a>
-        <div class="separador">/</div>
-        <a href="#!/refacciones" ng-click="objMenu.ItemSeleccionado('refacciones')"><p ng-class="{itemMenuSeleccionado: 'refacciones' == objMenu.menuSeleccionado}">Refacciones</p></a>
-         <div class="separador">/</div>
-        <a href="#!/proyectos" ng-click="objMenu.ItemSeleccionado('suministro')"><p ng-class="{itemMenuSeleccionado: 'suministro' == objMenu.menuSeleccionado}">Proyectos</p></a>
-<!--         <div class="separador">/</div>
-        <a href="" ng-click="objMenu.ItemSeleccionado('quienes&somos')"><p ng-class="{itemMenuSeleccionado: 'quienes&somos' == objMenu.menuSeleccionado}">Quienes Somos</p></a> -->
-        <div class="separador">/</div>
-        <a href="#!/contacto" ng-click="objMenu.ItemSeleccionado('contacto')"><p ng-class="{itemMenuSeleccionado: 'contacto' == objMenu.menuSeleccionado}">Contacto</p></a>
-    </nav>
-    <h1 style="display: none">Servicios de Hidrolavadoras Alta Presión</h1>
-</header>
-<section ng-view>
-</section>
-<footer ng-class="objMenu.classfooter">
-    <div class="row middle-xs height-100">
-        <div class="col-xs-4 logo_footer">
-            <img src="images/logo-white-sediap.png">
-            <span>&copy; 2017</span>
-        </div>
-        <div class="col-xs-8">
-            <div class="row end-xs">
-                <span class="icon-facebook2 icon-redes-sociales"></span>
-                <span class="icon-twitter icon-redes-sociales"></span>
-                <span class="icon-youtube icon-redes-sociales"></span>
+    <header>
+        <nav class="row center-xs middle-xs nav-menu">
+            <a href="/" ng-click="objMenu.ItemSeleccionado('home')"><p ng-class="{itemMenuSeleccionado: 'home' == objMenu.menuSeleccionado}">Home</p></a>
+            <div class="separador">/</div>
+            <a href="#!/equipos" ng-click="objMenu.ItemSeleccionado('equipos')"><p ng-class="{itemMenuSeleccionado: 'equipos' == objMenu.menuSeleccionado}">Equipos</p></a>
+            <div class="separador">/</div>
+            <a href="#!/refacciones" ng-click="objMenu.ItemSeleccionado('refacciones')"><p ng-class="{itemMenuSeleccionado: 'refacciones' == objMenu.menuSeleccionado}">Refacciones</p></a>
+             <div class="separador">/</div>
+            <a href="#!/proyectos" ng-click="objMenu.ItemSeleccionado('suministro')"><p ng-class="{itemMenuSeleccionado: 'suministro' == objMenu.menuSeleccionado}">Proyectos</p></a>
+    <!--         <div class="separador">/</div>
+            <a href="" ng-click="objMenu.ItemSeleccionado('quienes&somos')"><p ng-class="{itemMenuSeleccionado: 'quienes&somos' == objMenu.menuSeleccionado}">Quienes Somos</p></a> -->
+            <div class="separador">/</div>
+            <a href="#!/contacto" ng-click="objMenu.ItemSeleccionado('contacto')"><p ng-class="{itemMenuSeleccionado: 'contacto' == objMenu.menuSeleccionado}">Contacto</p></a>
+        </nav>
+        <h1 style="display: none">Servicios de Hidrolavadoras Alta Presión</h1>
+    </header>
+    <section ng-view>
+    </section>
+    <footer ng-class="objMenu.classfooter">
+        <div class="row middle-xs height-100">
+            <div class="col-xs-4 logo_footer">
+                <img src="images/logo-white-sediap.png">
+                <span>&copy; 2017</span>
             </div>
-        </div>
+            <div class="col-xs-8">
+                <div class="row end-xs">
+                    <span class="icon-facebook2 icon-redes-sociales"></span>
+                    <span class="icon-twitter icon-redes-sociales"></span>
+                    <span class="icon-youtube icon-redes-sociales"></span>
+                </div>
+            </div>
 
-    </div>
-</footer>
-<script type="text/javascript" src="vendor/vendor.min.js"></script> 
-<script type="text/javascript" src="js/app.min.js"></script> 
-    <!--<script type="text/javascript" src="vendor/modernizr.custom.28468.js"></script>
-    <script type="text/javascript" src="vendor/modernizr.custom.63321.js"></script>
-    <script type="text/javascript" src="vendor/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="vendor/jquery.cslider.js"></script>
-    <script type="text/javascript" src="vendor/jquery.catslider.js"></script>
-    <script type="text/javascript" src="vendor/JSLINQ.js"></script>
-    <script type="text/javascript" src="vendor/angular.min.js"></script>
-    <script type="text/javascript" src="vendor/angular-route.min.js"></script>
-    <script type="text/javascript" src="vendor/ngDialog.min.js"></script>
-    <script type="text/javascript" src="vendor/angular-resource.min.js"></script>
-    <script type="text/javascript" src="js/checks.js"></script>
-    <script type="text/javascript" src="js/filtros.js"></script>
-    <script type="text/javascript" src="js/directive.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/service.js"></script>
-    <script type="text/javascript" src="js/catalogos.js"></script>
-       <script type="text/javascript" src="js/contactanos.js"></script>
--->
+        </div>
+    </footer>
+        <script type="text/javascript" src="vendor/vendor.min.js"></script> 
+        <script type="text/javascript" src="js/app.min.js"></script> 
     </body>
 </html>

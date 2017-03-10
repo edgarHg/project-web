@@ -47,6 +47,7 @@ angular.module('cCatalogos', [])
                 {id: 7, name: "Podadoras", filtros: []},
                 {id: 8, name: "Desbrosadoras", filtros: []},
             ],
+
             hidrolavadoras: [
                 {
                     id: 1,

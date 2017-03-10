@@ -10,7 +10,7 @@
                 <h2>Categorías</h2>
             </div>
             <ul>
-                <li ng-repeat="cat in objIteracion.catEquipos" ng-click="objIteracion.cargarArray(cat.id)" ng-class="{categoriaSeleccionada: cat.id == objIteracion.categoriaSeleccionada }">
+                <li ng-repeat="cat in objIteracion.catEquipos" ng-click="objIteracion.cargarArray(cat)" ng-class="{categoriaSeleccionada: cat.id == objIteracion.categoriaSeleccionada }">
                     {{cat.name}}
                 </li>
             </ul>
@@ -43,7 +43,7 @@
         <aside class="servicios">
                 <sub>Equipos</sub>
                 <hr>
-               <h2 class="equipos">Hidrolavadoras</h2>
+               <h2 class="equipos">{{objIteracion.namaCategoria}}</h2>
                 <div class="filtros-select">
                     <div class="select-wrapper">
                         <select class="select width-200" ng-options="filt.id  as filt.name for filt in objIteracion.catEquipos" ng-model="objIteracion.idCatEquipos" ng-change="objIteracion.cargarArray(objIteracion.idCatEquipos)"> </select>

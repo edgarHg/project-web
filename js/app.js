@@ -13,7 +13,7 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 templateUrl: 'view/refacciones.html',
                 controller: 'ctrlRefacciones'
             })            
-            .when('/contacto', {
+            .when('/contacto/:asunto?/:name?/:marca?/:modelo?', {
                 templateUrl: 'view/contacto.html',
                 controller: 'ctrlContactanos'
             })
@@ -59,7 +59,7 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
         };
     }])
 
-    .controller('ctrlEquipos', ['$scope', 'Modal', 'cEquipos', '$routeParams',function ($scope, Modal, cEquipos,$routeParams) {
+    .controller('ctrlEquipos', ['$scope', 'Modal', 'cEquipos', '$routeParams', '$location', function ($scope, Modal, cEquipos, $routeParams, $location) {
         /*
          id = equivale que tipo de e1uipo es
          1 = hidrolavadora
@@ -83,6 +83,7 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
         $scope.objMenu.ItemSeleccionado('equipos');
         $scope.catEquipos = cEquipos.tiposEquipos;
         $scope.objIteracion = {
+            namaCategoria:"Todos",
             idCatEquipos: 100,
             idFiltroEquipo :1,
             catEquipos: cEquipos.tiposEquipos,
@@ -91,10 +92,10 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
             arrFiltrosCategoria: [],
             selected: {filtros: []},
             categoriaSeleccionada : 100,
-            cargarArray: function (tipo) {
-                this.categoriaSeleccionada = tipo;
-
-                var idEquipo = tipo;
+            cargarArray: function (categoria) {
+                this.categoriaSeleccionada = categoria.id;
+                this.namaCategoria = categoria.name;
+                var idEquipo = categoria.id;
                 this.paginacion.paginaActual = 0;
                 if (idEquipo == 100) {
                     this.arrFiltrado = this.Todos();
@@ -105,6 +106,7 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                     this.arrFiltrosCategoria = this.GetFiltrosCategorias(1);
                     this.selected.filtros = [];
                     this.paginacion.ConstruirPaginado(this.arrFiltrado);
+
                 }
                 else if (idEquipo == 2) {
                     this.arrFiltrado = this.Motobombas();
@@ -212,7 +214,14 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 Modal.notificacion({info: producto, path: 'view/modal-detalle-equipo.html'});
             },
             OpenModalCotizacion: function (producto) {
-                Modal.notificacion({info: producto, path: 'view/modal-cotizacion-equipo.html'});
+                var name = producto.name,
+                    marca = producto.marca,
+                    modelo = producto.modelo,
+                    asunto = "Cotización de Hidrolavadoras";
+
+                console.log(producto);
+                $location.path('/contacto/'+asunto+'/'+name+'/'+marca+'/'+modelo);
+                //Modal.notificacion({info: producto, path: 'view/modal-cotizacion-equipo.html'});
             },
             CerrarModal: function () {
                 Modal.cerrarModal();
