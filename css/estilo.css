@@ -352,9 +352,12 @@ header nav a p:hover{
 }
 .servicios hr{
     width: 40%;
-    margin: 0 auto;
-    padding-top: 30px;
-    margin-top: -30px;
+    margin: -30px auto 0;
+    height: 7px;
+    border-bottom: solid 1.5px #BBBABA;
+    border-top: solid 1.5px #BBBABA;
+    margin-bottom: 21px;
+}
 }
 .servicios h2{
     color: #000; 
@@ -912,12 +915,16 @@ footer{
 .row-genericos{
     margin: 2.5em 0;
 }
+.post-article{
+        padding: 2em;
+}
 .post{
     padding: 3em 3em 1em 3em;
     background: #FFF;
     border: solid 1px rgba(160, 160, 160, 0.3);
     margin: 0 0 3em 0;
     position: relative;
+    border-bottom: solid 2px #CCC;
 }
 .post header{
     background: rgba(0,0,0,0);
@@ -1150,7 +1157,7 @@ Medias
         width: 100%;
     }
     .caption-style-3 .caption {
-        top:350px;
+        top:340px;
     }
     .caption-style-3 .caption-text {
         top:9px;
@@ -1212,6 +1219,9 @@ Medias
     .row-quienes-somos {
         width: 100%;
     }
+    .caption-style-3 .caption {
+        top:280px;
+    }
     .caption-style-3 li {
         width:23%;
     }
@@ -1224,12 +1234,16 @@ Medias
 }
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
-    /* Styles */
+@media only screen and (min-width : 1281px) {
+   .post-article{
+        padding: 0em;
+    }
 }
 /* Large screens ----------- */
 @media only screen and (min-width : 1824px) {
-    /* Styles */
+    .post-article{
+        padding: 0em;
+    }
 }
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5),  only screen and (min-device-pixel-ratio : 1.5) {

@@ -21,6 +21,10 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
                 templateUrl: 'view/proyectos.html',
                 controller: ''
             })
+            .when('/proyectos/remolque-autonomo', {
+                templateUrl: 'view/proyectos-generico.html',
+                controller: ''
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -195,7 +199,11 @@ angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 
 
                     this.categoriaSeleccionada = tipo;
                     if(tipo == 1){
-                           this.FiltrarHidrolavadoras({tipo:tipo, idTipo:tipoFiltro,name:descripcion});
+                        if(tipoFiltro == 100){
+                            this.cargarArray({id:1, name: "Hidrolavadoras"});
+                        }else{
+                           this.FiltrarHidrolavadoras({tipo:tipo, idTipo:tipoFiltro,name:descripcion}); 
+                       }
                     }else{
                         this.arrFiltrado = this.Todos();
                         this.paginacion.ConstruirPaginado(this.arrFiltrado);
