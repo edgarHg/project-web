@@ -13,6 +13,7 @@ var bases = {
     dist: 'webapp/'
 };
 
+
 var paths = {
     //Incluiremos todos los componentes dentro de app, exceptuando la carpeta lib (administrada por bower)
     scripts: ['js/*.js'],
