@@ -181,7 +181,78 @@ angular.module('cCatalogos', [])
                     consumo: " Diesel 5 kg/hr, 25 litros",
                     caldera: "A diesel, de doble serpentín",
                     img: "hidrolavadoras/c-200.jpg"
+                },
+                {
+                    id: 1,
+                    name: "Hidrolavadoras Agua Caliente",
+                    descripcion: "Esta hidrolavadora es propia para trabajo de uso rudo, utilizada en mantenimiento de ductos petroleros y fabricas de hules y plasticos",
+                    idSerie: 5,
+                    descSerie: "Industrial",
+                    idMotor: 2,
+                    descMotor: "Eléctrica",
+                    idTipoAgua: 7,
+                    descTipoAgua: "Agua Caliente",
+                    marca: " Mitho Plus ",
+                    modelo: "1800-M",
+                    presion: "1800 lb/in2 (124 BAR)",
+                    potencia_de_motor: "3400 R.P.M. 220-60-1",
+                    peso: "53 Kg.",
+                    voltaje: "",
+                    conexion: "",
+                    uso: "Industrial",
+                    consumo: "",
+                    caldera: "",
+                    img: "hidrolavadoras/mithoplus-1800-m.jpg"
+                },
+                {
+                    id: 1,
+                    name: "Hidrolavadoras Agua Caliente",
+                    descripcion: "Este equipo está diseñado para uso continuo, acelera el tiempo de limpieza especialmente cuando las superficies están llenas de grasas, aceites, solventes, etc. Por su bajo mantenimiento y extrema confiabilidad, la Golden es un excelente equipo para trabajos de limpieza industrial.",
+                    idSerie: 5,
+                    descSerie: "Industrial",
+                    idMotor: 2,
+                    descMotor: "Eléctrica",
+                    idTipoAgua: 7,
+                    descTipoAgua: "Agua Caliente",
+                    marca: "Golden Plus",
+                    modelo: "2960-T",
+                    presion: "2960 lb/in2 (200 BAR)",
+                    potencia_de_motor: "7.5 HP, 1750 RPM 220-60-3",
+                    peso: "160 Kg.",
+                    voltaje: "",
+                    conexion: "",
+                    uso: "Industrial",
+                    consumo: "",
+                    caldera: "",
+
+                    img:"hidrolavadoras/GoldenPlus2960-T.jpg"
+                },
+                {
+                    id: 1,
+                    name: "Hidrolavadoras Agua Caliente",
+                    descripcion: "Este modelo por su gran versatilidad y sus controles totalmente automatizados le permite aprovecharlo en un 100 por ciento, es de gran utilidad para cualquier industria en donde sus necesidades de limpieza requieran jornadas de arduo trabajo y de uso continuo, es ideal para quitar de cualquier superficie grasa, aceite,",
+                    idSerie: 5,
+                    descSerie: "Industrial",
+                    idMotor: 2,
+                    descMotor: "Eléctrica",
+                    idTipoAgua: 7,
+                    descTipoAgua: "Agua Caliente",
+                    marca: " Mistral DS",
+                    modelo: "2960 T",
+                    presion: "2960 lb/in2 (200 BAR) ",
+                    potencia_de_motor: "7.5 HP, 1750 RPM 220-60-3",
+                    peso: "180 Kg.",
+                    voltaje: "",
+                    conexion: "",
+                    uso: "Industrial",
+                    consumo: "",
+                    caldera: "",
+
+                    img:"hidrolavadoras/MistralDS2960T.jpg"
+                },{
+                
                 }
+
             ],
             motobombas: [
                 {
