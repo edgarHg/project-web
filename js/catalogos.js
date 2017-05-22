@@ -3,7 +3,8 @@ angular.module('cCatalogos', [])
         return {
             tiposEquipos: [
                 {id: 100, name: "Todos"},
-                {id: 1, name: "Hidrolavadoras",
+                {
+                    id: 1, name: "Hidrolavadoras",
                     filtros: [
                         {id: 1, idTipo: 1, name: "Motor a gasolina"},
                         {id: 1, idTipo: 2, name: "Motor eléctrico"},
@@ -16,7 +17,8 @@ angular.module('cCatalogos', [])
                         // {id: 1, idTipo: 9, name: "Accsesorios"}
                     ]
                 },
-                {id: 2, name: "Motobombas",
+                {
+                    id: 2, name: "Motobombas",
                     filtros: [
                         {id: 2, idTipo: 1, name: "Motor a gasolina"},
                         {id: 2, idTipo: 1, name: "Motor a diesel"},
@@ -25,22 +27,25 @@ angular.module('cCatalogos', [])
                         {id: 2, idTipo: 1, name: "Accsesorios"}
                     ]
                 },
-                {id: 3, name: "Aspiradoras",
+                {
+                    id: 3, name: "Aspiradoras",
                     filtros: [
                         {idTipo: 3, name: "Comercial"},
                         {idTipo: 2, name: "Industrial"},
                     ]
                 },
-                {id: 4, name: "Espumadores",
+                {
+                    id: 4, name: "Espumadores",
                     filtros: [
-                        {id: 4, idTipo:1, name: "Comercial"},
-                        {id: 4, idTipo:2, name: "Industrial"},
+                        {id: 4, idTipo: 1, name: "Comercial"},
+                        {id: 4, idTipo: 2, name: "Industrial"},
                     ]
                 },
-                {id: 5, name: "Generadores",
+                {
+                    id: 5, name: "Generadores",
                     filtros: [
-                        {id: 5, idTipo:1, name: "Comercial"},
-                        {id: 5, idTipo:2, name: "Industrial"},
+                        {id: 5, idTipo: 1, name: "Comercial"},
+                        {id: 5, idTipo: 2, name: "Industrial"},
                     ]
                 },
                 {id: 6, name: "Torres de Iluminación", filtros: []},
@@ -225,7 +230,7 @@ angular.module('cCatalogos', [])
                     consumo: "",
                     caldera: "",
 
-                    img:"hidrolavadoras/GoldenPlus2960-T.jpg"
+                    img: "hidrolavadoras/GoldenPlus2960-T.jpg"
                 },
                 {
                     id: 1,
@@ -248,12 +253,115 @@ angular.module('cCatalogos', [])
                     consumo: "",
                     caldera: "",
 
-                    img:"hidrolavadoras/MistralDS2960T.jpg"
-                },{
-                
+                    img: "hidrolavadoras/MistralDS2960T.jpg"
+                }, {
+                    id: 1,
+                    name: "Hidrolavadora industrial de alta presión en agua fría",
+                    descripcion: "Muy compacta y ligera, fácil de transportar y operar, ideal para trabajos de cuadrillas en alturas, o para iniciar tu negocio de lavado, cuenta con accesorios industriales como gatillo, manguera con refuerzo de acero, lanza, boquillas intercambiables, que hacen gran diferencia con el segmento doméstico.",
+                    idSerie: 5,
+                    descSerie: "Industrial",
+                    idMotor: 1,
+                    descMotor: "Gasolina",
+                    idTipoAgua: 6,
+                    descTipoAgua: "Agua Fría",
+                    marca: "HIDROREY",
+                    modelo: "H6G3000",
+                    presion: "2.6GPM 3000PSI MAX",
+                    potencia_de_motor: "6HP HONDA",
+                    peso: null,
+                    voltaje: null,
+                    conexion: null,
+                    uso: "Industrial",
+                    consumo: null,
+                    caldera: null,
+                    img: "hidrolavadoras/H6G3000.jpg"
+                }, {
+                    id: 1,
+                    name: "Hidrolavadora industrial de alta presión en agua fría",
+                    descripcion: "Motor Gasolina Honda GC190, Bomba Industrial Italiana General Pump 2700psi. Muy compacta y ligera, fácil de transportar y operar, ideal para trabajos de cuadrillas en alturas, o para iniciar tu negocio de lavado, cuenta con accesorios industriales como gatillo, manguera con refuerzo de acero, lanza, boquillas intercambiables, que hacen gran diferencia con el segmento doméstico.",
+                    idSerie: 4,
+                    descSerie: "Comercial",
+                    idMotor: 1,
+                    descMotor: "Gasolina",
+                    idTipoAgua: 6,
+                    descTipoAgua: "Agua Fría",
+                    marca: "HIDROREY",
+                    modelo: "H6G2700",
+                    presion: "2.6GPM 2700PSI MAX",
+                    potencia_de_motor: "6HP HONDA",
+                    peso: null,
+                    voltaje: null,
+                    conexion: null,
+                    uso: "Industrial",
+                    consumo: null,
+                    caldera: null,
+                    img: "hidrolavadoras/H6G2700.jpg"
+                }, {
+                    id: 1,
+                    name: "Hidrolavadora industrial de alta presión en agua fría",
+                    descripcion: "Motor a Gasolina Honda GX390, Bomba italiana General Pump triplex con sistema biela-cigüeñal, Bypass externo resorte negro, montada sobre resistente chasis de acero con pintura horneada, y llantas rellenas de poliuretano Flat-Free que nunca se poncharan. Todos sus accesorios son de uso industrial, están sobrados para su tipo, como su gatillo exclusivo easy-pull y su manguera con refuerzo de malla de acero. 100% reparable, con refacciones originales y accesorios estándar de la industria.",
+                    idSerie: 5,
+                    descSerie: "Industrial",
+                    idMotor: 1,
+                    descMotor: "Gasolina",
+                    idTipoAgua: 6,
+                    descTipoAgua: "Agua Fría",
+                    marca: "HIDROREY",
+                    modelo: "H13G4000",
+                    presion: "4GPM 4000PSI ITALY",
+                    potencia_de_motor: "13HP GX390",
+                    peso: null,
+                    voltaje: null,
+                    conexion: null,
+                    uso: "Industrial",
+                    consumo: null,
+                    caldera: null,
+                    img: "hidrolavadoras/H13G4000.jpg"
+                }, {
+                    id: 1,
+                    name: "Hidrolavadora Heavy Duty Super Industrial Agua Fría",
+                    descripcion: "Motor Honda GX690 24HP, Bomba italiana General Pump de pistones cerámicos triplex y biela-cigüeñal 5000psi, montada por Poleas y Bandas sobre resistente chasis de acero con pintura horneada, y 4 llantas neumaticas. Ideal para uso Industrial o Preparacion de Superficies. Accesorios Industriales, gatillo, manguera con refuerzo de malla de acero, regulador de presión, boquillas. 100% reparable, con refacciones originales y accesorios estándar de la industria.",
+                    idSerie: 5,
+                    descSerie: "Industrial",
+                    idMotor: 1,
+                    descMotor: "Gasolina",
+                    idTipoAgua: 6,
+                    descTipoAgua: "Agua Fría",
+                    marca: "HIDROREY",
+                    modelo: "HD24G5000P",
+                    presion: "4.5GPM 5000PSI MAX. GP ITALY",
+                    potencia_de_motor: "24HP GX690 ARRANQUE ELECTRICO",
+                    peso: null,
+                    voltaje: null,
+                    conexion: null,
+                    uso: "Industrial",
+                    consumo: null,
+                    caldera: null,
+                    img: "hidrolavadoras/HD24G5000P.jpg"
+                }, {
+                    id: 1,
+                    name: "Hidrolavadora Heavy Duty Super Industrial Agua Fría",
+                    descripcion: "Motor Honda GX690 24HP, Bomba italiana General Pump de pistones cerámicos triplex y biela-cigüeñal 7000psi, montada por Poleas y Bandas sobre resistente chasis de acero con pintura horneada, y 4 llantas neumaticas. Ideal para uso Industrial o Preparacion de Superficies. Accesorios Industriales, gatillo, manguera con refuerzo de malla de acero, regulador de presión, boquillas. 100% reparable, con refacciones originales y accesorios estándar de la industria.",
+                    idSerie: 5,
+                    descSerie: "Industrial",
+                    idMotor: 1,
+                    descMotor: "Gasolina",
+                    idTipoAgua: 6,
+                    descTipoAgua: "Agua Fría",
+                    marca: "HIDROREY",
+                    modelo: "HD24G7000P",
+                    presion: "3.6GPM 7000PSI MAX. GP ITALY",
+                    potencia_de_motor: "24HP GX690 ARRANQUE ELECTRICO",
+                    peso: null,
+                    voltaje: null,
+                    conexion: null,
+                    uso: "Industrial",
+                    consumo: null,
+                    caldera: null,
+                    img: "hidrolavadoras/HD24H7000P.jpg"
                 }
-
             ],
+
             motobombas: [
                 {
                     id: 2,
@@ -396,9 +504,9 @@ angular.module('cCatalogos', [])
                     img: "generadores/generador.jpg"
                 }
             ],
-            torresIluminacion:[],
+            torresIluminacion: [],
             podadoras: [],
-            desbrosadoras:[],
-            compresores:[]
+            desbrosadoras: [],
+            compresores: []
         }
     });
