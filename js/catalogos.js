@@ -51,6 +51,8 @@ angular.module('cCatalogos', [])
                 {id: 6, name: "Torres de Iluminación", filtros: []},
                 {id: 7, name: "Podadoras", filtros: []},
                 {id: 8, name: "Desbrosadoras", filtros: []},
+                {id: 9, name: "Desazolvadora", filtros: []}
+
             ],
 
             hidrolavadoras: [
@@ -361,7 +363,30 @@ angular.module('cCatalogos', [])
                     img: "hidrolavadoras/HD24H7000P.jpg"
                 }
             ],
-
+            desazolvadora:[
+                 {
+                    id: 10,
+                    name: "Desazolvadora-Hidrolavadora Portatil Agua Fría",
+                    descripcion: "Motor a Gasolina Honda GX390, Bomba italiana General Pump triplex con sistema biela-cigüeñal 3500psi, Bypass externo resorte negro, montada sobre resistente chasis de acero con pintura horneada, y llantas rellenas de poliuretano Flat-Free que nunca se poncharan. Ideal para lavado industrial y desazolve de tuberías de 2” a 6” de Diametro. Todos sus accesorios son de uso industrial, Incluye valvula de pulsaciones, valvula de pie, carrete y manguera flexible para desazolve, asi como tobera de penetracion.",
+                    idSerie: 5,
+                    descSerie: "Industrial",
+                    idMotor: 1,
+                    descMotor: "Gasolina",
+                    idTipoAgua: 6,
+                    descTipoAgua: "Agua Fría",
+                    marca: "HIDROREY",
+                    modelo: "H13G3500JET",
+                    presion: "4GPM 4000PSI ITALY",
+                    potencia_de_motor: "13HP GX390",
+                    peso: null,
+                    voltaje: null,
+                    conexion: null,
+                    uso: "Industrial",
+                    consumo: null,
+                    caldera: null,
+                    img: "hidrolavadoras/H13G3500JET.jpg"
+                }
+            ],
             motobombas: [
                 {
                     id: 2,
