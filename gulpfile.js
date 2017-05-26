@@ -6,6 +6,7 @@ var pngcrush = require('imagemin-pngcrush');
 var minifyCSS = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
+var uglify = require('gulp-uglify');
 
 var bases = {
     app: 'app/',
@@ -27,13 +28,7 @@ var paths = {
         'vendor/angular-route.min.js',
         'vendor/ngDialog.min.js',
         'vendor/angular-resource.min.js',
-        'vendor/js/checks.js',
-        'vendor/js/filtros.js',
-        'vendor/js/directive.js',
-        'vendor/js/app.js',
-        'vendor/js/service.js',
-        'vendor/js/catalogos.js',
-        'vendor/js/contactanos.js'
+        'vendor/checks.js'
     ],
     //Ubicacion de los archivos de estilos que minificaremos
     styles: [
@@ -56,13 +51,13 @@ var paths = {
     extras: []
 };
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
     return gulp.src(bases.dist)
         .pipe(clean());
 });
 
-gulp.task('images', function() {
-    return   gulp.src('images/**/*.{png,jpg,jpeg,gif,svg}')
+gulp.task('images', function () {
+    return gulp.src('images/**/*.{png,jpg,jpeg,gif,svg}')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
@@ -74,7 +69,7 @@ gulp.task('images', function() {
         }));
 });
 
-gulp.task('copy:estilo', function() {
+gulp.task('copy:estilo', function () {
     return gulp.src(paths.styles)
         .pipe(minifyCSS())
         .pipe(concat('estilos.min.css'))
@@ -84,7 +79,7 @@ gulp.task('copy:estilo', function() {
         }));
 });
 
-gulp.task('copy:fonts', function() {
+gulp.task('copy:fonts', function () {
     return gulp.src('fonts/*')
         .pipe(gulp.dest('webapp/fonts'))
         .pipe(browserSync.reload({
@@ -92,7 +87,7 @@ gulp.task('copy:fonts', function() {
         }));
 });
 
-gulp.task('copy:vendor', function() {
+gulp.task('copy:vendor', function () {
     return gulp.src(paths.libs)
         .pipe(concat('vendor.min.js'))
         .pipe(gulp.dest('webapp/vendor'))
@@ -101,7 +96,7 @@ gulp.task('copy:vendor', function() {
         }));
 });
 
-gulp.task('copy:index', function() {
+gulp.task('copy:index', function () {
     return gulp.src('index.html')
         .pipe(gulp.dest('webapp/'))
         .pipe(browserSync.reload({
@@ -109,7 +104,7 @@ gulp.task('copy:index', function() {
         }));
 });
 
-gulp.task('copy:html', function() {
+gulp.task('copy:html', function () {
     return gulp.src(paths.html)
         .pipe(gulp.dest('webapp/view/'))
         .pipe(browserSync.reload({
@@ -117,17 +112,27 @@ gulp.task('copy:html', function() {
         }));
 
 });
-gulp.task('copy:js', function() {
+
+gulp.task('copy:js', function () {
     return gulp.src(paths.scripts)
-        .pipe(concat('app.min.js'))
+        .pipe(concat(('app.min.js')))
         .pipe(gulp.dest('webapp/js/'))
         .pipe(browserSync.reload({
             stream: true
         }));
-
 });
 
-gulp.task('browserSync', function() {
+gulp.task('cat:js', function () {
+    return gulp.src('cat/catalogos.js')
+        .pipe(concat(('product.min.js')))
+        .pipe(uglify())
+        .pipe(gulp.dest('webapp/js/'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
+});
+
+gulp.task('browserSync', function () {
     browserSync.init({
         server: {
             baseDir: 'webapp'
@@ -135,10 +140,10 @@ gulp.task('browserSync', function() {
     })
 });
 
-gulp.task('default', ['browserSync', 'images','copy:estilo','copy:fonts','copy:vendor','copy:index','copy:html','copy:js'], function (){
+gulp.task('default', ['browserSync', 'images', 'copy:estilo', 'copy:fonts', 'copy:vendor', 'copy:index', 'copy:html', 'copy:js', 'cat:js'], function () {
     gulp.watch('css/*.css', ['copy:estilo']);
     gulp.watch('js/*.js', ['copy:js']);
     gulp.watch('view/*.html', ['copy:html']);
-    gulp.watch('*.html',['copy:index']);
+    gulp.watch('*.html', ['copy:index']);
 
 });

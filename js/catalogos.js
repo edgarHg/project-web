@@ -384,7 +384,7 @@ angular.module('cCatalogos', [])
                     uso: "Industrial",
                     consumo: null,
                     caldera: null,
-                    img: "hidrolavadoras/H13G3500JET.jpg"
+                    img: "hidrolavadoras/H13GJET.jpg"
                 }
             ],
             motobombas: [

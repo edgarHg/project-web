@@ -1,4 +1,4 @@
-angular.module('myApp', ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 'cCatalogos','filtros','directivas','ngResource','mContactanos'])
+angular.module("myApp", ['checklist-model', 'ngRoute', 'ngDialog', 'ngService', 'cCatalogos','filtros','directivas','ngResource','mContactanos'])
 
     .config(function ($routeProvider) {
         $routeProvider
