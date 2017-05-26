@@ -145,5 +145,5 @@ gulp.task('default', ['browserSync', 'images', 'copy:estilo', 'copy:fonts', 'cop
     gulp.watch('js/*.js', ['copy:js']);
     gulp.watch('view/*.html', ['copy:html']);
     gulp.watch('*.html', ['copy:index']);
-
+    gulp.watch('images/**/*.{png,jpg,jpeg,gif,svg}', ['images']);
 });
